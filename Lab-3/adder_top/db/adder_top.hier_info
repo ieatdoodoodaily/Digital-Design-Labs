@@ -1,0 +1,223 @@
+|adder_top
+x[0] => adder:U_ADDER.x[0]
+x[1] => adder:U_ADDER.x[1]
+x[2] => adder:U_ADDER.x[2]
+x[3] => adder:U_ADDER.x[3]
+x[4] => adder:U_ADDER.x[4]
+x[5] => adder:U_ADDER.x[5]
+x[6] => adder:U_ADDER.x[6]
+x[7] => adder:U_ADDER.x[7]
+y[0] => adder:U_ADDER.y[0]
+y[1] => adder:U_ADDER.y[1]
+y[2] => adder:U_ADDER.y[2]
+y[3] => adder:U_ADDER.y[3]
+y[4] => adder:U_ADDER.y[4]
+y[5] => adder:U_ADDER.y[5]
+y[6] => adder:U_ADDER.y[6]
+y[7] => adder:U_ADDER.y[7]
+cin => adder:U_ADDER.cin
+s[0] <= adder:U_ADDER.s[0]
+s[1] <= adder:U_ADDER.s[1]
+s[2] <= adder:U_ADDER.s[2]
+s[3] <= adder:U_ADDER.s[3]
+s[4] <= adder:U_ADDER.s[4]
+s[5] <= adder:U_ADDER.s[5]
+s[6] <= adder:U_ADDER.s[6]
+s[7] <= adder:U_ADDER.s[7]
+cout <= adder:U_ADDER.cout
+
+
+|adder_top|adder:U_ADDER
+x[0] => cla4:U_CLA4_1.x[0]
+x[1] => cla4:U_CLA4_1.x[1]
+x[2] => cla4:U_CLA4_1.x[2]
+x[3] => cla4:U_CLA4_1.x[3]
+x[4] => cla4:U_CLA4_2.x[0]
+x[5] => cla4:U_CLA4_2.x[1]
+x[6] => cla4:U_CLA4_2.x[2]
+x[7] => cla4:U_CLA4_2.x[3]
+y[0] => cla4:U_CLA4_1.y[0]
+y[1] => cla4:U_CLA4_1.y[1]
+y[2] => cla4:U_CLA4_1.y[2]
+y[3] => cla4:U_CLA4_1.y[3]
+y[4] => cla4:U_CLA4_2.y[0]
+y[5] => cla4:U_CLA4_2.y[1]
+y[6] => cla4:U_CLA4_2.y[2]
+y[7] => cla4:U_CLA4_2.y[3]
+cin => cla4:U_CLA4_1.cin
+cin => cgen2:U_CGEN2.Ci
+s[0] <= cla4:U_CLA4_1.s[0]
+s[1] <= cla4:U_CLA4_1.s[1]
+s[2] <= cla4:U_CLA4_1.s[2]
+s[3] <= cla4:U_CLA4_1.s[3]
+s[4] <= cla4:U_CLA4_2.s[0]
+s[5] <= cla4:U_CLA4_2.s[1]
+s[6] <= cla4:U_CLA4_2.s[2]
+s[7] <= cla4:U_CLA4_2.s[3]
+cout <= cgen2:U_CGEN2.Ci2
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_1
+x[0] => cla2:U_CLA2_1.x[0]
+x[1] => cla2:U_CLA2_1.x[1]
+x[2] => cla2:U_CLA2_2.x[0]
+x[3] => cla2:U_CLA2_2.x[1]
+y[0] => cla2:U_CLA2_1.y[0]
+y[1] => cla2:U_CLA2_1.y[1]
+y[2] => cla2:U_CLA2_2.y[0]
+y[3] => cla2:U_CLA2_2.y[1]
+cin => cla2:U_CLA2_1.cin
+cin => cgen2:U_CGEN2.Ci
+s[0] <= cla2:U_CLA2_1.s[0]
+s[1] <= cla2:U_CLA2_1.s[1]
+s[2] <= cla2:U_CLA2_2.s[0]
+s[3] <= cla2:U_CLA2_2.s[1]
+cout <= cgen2:U_CGEN2.Ci2
+BP <= cgen2:U_CGEN2.BP
+BG <= cgen2:U_CGEN2.BG
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_1|cla2:U_CLA2_1
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_1|cla2:U_CLA2_2
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_1|cgen2:U_CGEN2
+Ci => Ci1.IN0
+Ci => Ci2.IN1
+Pi => Ci1.IN1
+Pi => Ci2.IN0
+Gi => Ci1.IN1
+Gi => Ci2.IN0
+Pi1 => Ci2.IN1
+Pi1 => Ci2.IN1
+Gi1 => Ci2.IN1
+Ci1 <= Ci1.DB_MAX_OUTPUT_PORT_TYPE
+Ci2 <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BP <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BG <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_2
+x[0] => cla2:U_CLA2_1.x[0]
+x[1] => cla2:U_CLA2_1.x[1]
+x[2] => cla2:U_CLA2_2.x[0]
+x[3] => cla2:U_CLA2_2.x[1]
+y[0] => cla2:U_CLA2_1.y[0]
+y[1] => cla2:U_CLA2_1.y[1]
+y[2] => cla2:U_CLA2_2.y[0]
+y[3] => cla2:U_CLA2_2.y[1]
+cin => cla2:U_CLA2_1.cin
+cin => cgen2:U_CGEN2.Ci
+s[0] <= cla2:U_CLA2_1.s[0]
+s[1] <= cla2:U_CLA2_1.s[1]
+s[2] <= cla2:U_CLA2_2.s[0]
+s[3] <= cla2:U_CLA2_2.s[1]
+cout <= cgen2:U_CGEN2.Ci2
+BP <= cgen2:U_CGEN2.BP
+BG <= cgen2:U_CGEN2.BG
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_2|cla2:U_CLA2_1
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_2|cla2:U_CLA2_2
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder_top|adder:U_ADDER|cla4:U_CLA4_2|cgen2:U_CGEN2
+Ci => Ci1.IN0
+Ci => Ci2.IN1
+Pi => Ci1.IN1
+Pi => Ci2.IN0
+Gi => Ci1.IN1
+Gi => Ci2.IN0
+Pi1 => Ci2.IN1
+Pi1 => Ci2.IN1
+Gi1 => Ci2.IN1
+Ci1 <= Ci1.DB_MAX_OUTPUT_PORT_TYPE
+Ci2 <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BP <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BG <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder_top|adder:U_ADDER|cgen2:U_CGEN2
+Ci => Ci1.IN0
+Ci => Ci2.IN1
+Pi => Ci1.IN1
+Pi => Ci2.IN0
+Gi => Ci1.IN1
+Gi => Ci2.IN0
+Pi1 => Ci2.IN1
+Pi1 => Ci2.IN1
+Gi1 => Ci2.IN1
+Ci1 <= Ci1.DB_MAX_OUTPUT_PORT_TYPE
+Ci2 <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BP <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BG <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+
+

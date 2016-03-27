@@ -1,0 +1,8 @@
+
+State Machine - |top_level|gcd:U_GCD|ctrl2:U_CTRL|state
+Name state.WAIT_0 state.OUTPUT_GCD state.GCD state.INIT state.WAIT_1 
+state.WAIT_1 0 0 0 0 0 
+state.INIT 0 0 0 1 1 
+state.GCD 0 0 1 0 1 
+state.OUTPUT_GCD 0 1 0 0 1 
+state.WAIT_0 1 0 0 0 1 

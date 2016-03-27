@@ -1,0 +1,395 @@
+|top_level
+switch[0] => adder:U_ADDER.y[0]
+switch[1] => adder:U_ADDER.y[1]
+switch[2] => adder:U_ADDER.y[2]
+switch[3] => adder:U_ADDER.y[3]
+switch[4] => adder:U_ADDER.y[4]
+switch[5] => adder:U_ADDER.x[0]
+switch[6] => adder:U_ADDER.x[1]
+switch[7] => adder:U_ADDER.x[2]
+switch[8] => adder:U_ADDER.x[3]
+switch[9] => adder:U_ADDER.x[4]
+button[0] => adder:U_ADDER.cin
+button[0] => led0_dp.DATAIN
+button[1] => ~NO_FANOUT~
+button[2] => ~NO_FANOUT~
+led0[0] <= decoder7seg:U_LED0.output[0]
+led0[1] <= decoder7seg:U_LED0.output[1]
+led0[2] <= decoder7seg:U_LED0.output[2]
+led0[3] <= decoder7seg:U_LED0.output[3]
+led0[4] <= decoder7seg:U_LED0.output[4]
+led0[5] <= decoder7seg:U_LED0.output[5]
+led0[6] <= decoder7seg:U_LED0.output[6]
+led0_dp <= button[0].DB_MAX_OUTPUT_PORT_TYPE
+led1[0] <= decoder7seg:U_LED1.output[0]
+led1[1] <= decoder7seg:U_LED1.output[1]
+led1[2] <= decoder7seg:U_LED1.output[2]
+led1[3] <= decoder7seg:U_LED1.output[3]
+led1[4] <= decoder7seg:U_LED1.output[4]
+led1[5] <= decoder7seg:U_LED1.output[5]
+led1[6] <= decoder7seg:U_LED1.output[6]
+led1_dp <= adder:U_ADDER.s[5]
+led2[0] <= decoder7seg:U_LED2.output[0]
+led2[1] <= decoder7seg:U_LED2.output[1]
+led2[2] <= decoder7seg:U_LED2.output[2]
+led2[3] <= decoder7seg:U_LED2.output[3]
+led2[4] <= decoder7seg:U_LED2.output[4]
+led2[5] <= decoder7seg:U_LED2.output[5]
+led2[6] <= decoder7seg:U_LED2.output[6]
+led2_dp <= adder:U_ADDER.s[5]
+led3[0] <= decoder7seg:U_LED3.output[0]
+led3[1] <= decoder7seg:U_LED3.output[1]
+led3[2] <= decoder7seg:U_LED3.output[2]
+led3[3] <= decoder7seg:U_LED3.output[3]
+led3[4] <= decoder7seg:U_LED3.output[4]
+led3[5] <= decoder7seg:U_LED3.output[5]
+led3[6] <= decoder7seg:U_LED3.output[6]
+led3_dp <= adder:U_ADDER.cout
+
+
+|top_level|decoder7seg:U_LED3
+input[0] => Mux0.IN19
+input[0] => Mux1.IN19
+input[0] => Mux2.IN19
+input[0] => Mux3.IN19
+input[0] => Mux4.IN19
+input[0] => Mux5.IN19
+input[0] => Mux6.IN19
+input[1] => Mux0.IN18
+input[1] => Mux1.IN18
+input[1] => Mux2.IN18
+input[1] => Mux3.IN18
+input[1] => Mux4.IN18
+input[1] => Mux5.IN18
+input[1] => Mux6.IN18
+input[2] => Mux0.IN17
+input[2] => Mux1.IN17
+input[2] => Mux2.IN17
+input[2] => Mux3.IN17
+input[2] => Mux4.IN17
+input[2] => Mux5.IN17
+input[2] => Mux6.IN17
+input[3] => Mux0.IN16
+input[3] => Mux1.IN16
+input[3] => Mux2.IN16
+input[3] => Mux3.IN16
+input[3] => Mux4.IN16
+input[3] => Mux5.IN16
+input[3] => Mux6.IN16
+output[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|decoder7seg:U_LED2
+input[0] => Mux0.IN19
+input[0] => Mux1.IN19
+input[0] => Mux2.IN19
+input[0] => Mux3.IN19
+input[0] => Mux4.IN19
+input[0] => Mux5.IN19
+input[0] => Mux6.IN19
+input[1] => Mux0.IN18
+input[1] => Mux1.IN18
+input[1] => Mux2.IN18
+input[1] => Mux3.IN18
+input[1] => Mux4.IN18
+input[1] => Mux5.IN18
+input[1] => Mux6.IN18
+input[2] => Mux0.IN17
+input[2] => Mux1.IN17
+input[2] => Mux2.IN17
+input[2] => Mux3.IN17
+input[2] => Mux4.IN17
+input[2] => Mux5.IN17
+input[2] => Mux6.IN17
+input[3] => Mux0.IN16
+input[3] => Mux1.IN16
+input[3] => Mux2.IN16
+input[3] => Mux3.IN16
+input[3] => Mux4.IN16
+input[3] => Mux5.IN16
+input[3] => Mux6.IN16
+output[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|decoder7seg:U_LED1
+input[0] => Mux0.IN19
+input[0] => Mux1.IN19
+input[0] => Mux2.IN19
+input[0] => Mux3.IN19
+input[0] => Mux4.IN19
+input[0] => Mux5.IN19
+input[0] => Mux6.IN19
+input[1] => Mux0.IN18
+input[1] => Mux1.IN18
+input[1] => Mux2.IN18
+input[1] => Mux3.IN18
+input[1] => Mux4.IN18
+input[1] => Mux5.IN18
+input[1] => Mux6.IN18
+input[2] => Mux0.IN17
+input[2] => Mux1.IN17
+input[2] => Mux2.IN17
+input[2] => Mux3.IN17
+input[2] => Mux4.IN17
+input[2] => Mux5.IN17
+input[2] => Mux6.IN17
+input[3] => Mux0.IN16
+input[3] => Mux1.IN16
+input[3] => Mux2.IN16
+input[3] => Mux3.IN16
+input[3] => Mux4.IN16
+input[3] => Mux5.IN16
+input[3] => Mux6.IN16
+output[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|decoder7seg:U_LED0
+input[0] => Mux0.IN19
+input[0] => Mux1.IN19
+input[0] => Mux2.IN19
+input[0] => Mux3.IN19
+input[0] => Mux4.IN19
+input[0] => Mux5.IN19
+input[0] => Mux6.IN19
+input[1] => Mux0.IN18
+input[1] => Mux1.IN18
+input[1] => Mux2.IN18
+input[1] => Mux3.IN18
+input[1] => Mux4.IN18
+input[1] => Mux5.IN18
+input[1] => Mux6.IN18
+input[2] => Mux0.IN17
+input[2] => Mux1.IN17
+input[2] => Mux2.IN17
+input[2] => Mux3.IN17
+input[2] => Mux4.IN17
+input[2] => Mux5.IN17
+input[2] => Mux6.IN17
+input[3] => Mux0.IN16
+input[3] => Mux1.IN16
+input[3] => Mux2.IN16
+input[3] => Mux3.IN16
+input[3] => Mux4.IN16
+input[3] => Mux5.IN16
+input[3] => Mux6.IN16
+output[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|adder:U_ADDER
+x[0] => cla4:U_CLA4_1.x[0]
+x[1] => cla4:U_CLA4_1.x[1]
+x[2] => cla4:U_CLA4_1.x[2]
+x[3] => cla4:U_CLA4_1.x[3]
+x[4] => cla4:U_CLA4_2.x[0]
+x[5] => cla4:U_CLA4_2.x[1]
+x[6] => cla4:U_CLA4_2.x[2]
+x[7] => cla4:U_CLA4_2.x[3]
+y[0] => cla4:U_CLA4_1.y[0]
+y[1] => cla4:U_CLA4_1.y[1]
+y[2] => cla4:U_CLA4_1.y[2]
+y[3] => cla4:U_CLA4_1.y[3]
+y[4] => cla4:U_CLA4_2.y[0]
+y[5] => cla4:U_CLA4_2.y[1]
+y[6] => cla4:U_CLA4_2.y[2]
+y[7] => cla4:U_CLA4_2.y[3]
+cin => cla4:U_CLA4_1.cin
+cin => cgen2:U_CGEN2.Ci
+s[0] <= cla4:U_CLA4_1.s[0]
+s[1] <= cla4:U_CLA4_1.s[1]
+s[2] <= cla4:U_CLA4_1.s[2]
+s[3] <= cla4:U_CLA4_1.s[3]
+s[4] <= cla4:U_CLA4_2.s[0]
+s[5] <= cla4:U_CLA4_2.s[1]
+s[6] <= cla4:U_CLA4_2.s[2]
+s[7] <= cla4:U_CLA4_2.s[3]
+cout <= cgen2:U_CGEN2.Ci2
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_1
+x[0] => cla2:U_CLA2_1.x[0]
+x[1] => cla2:U_CLA2_1.x[1]
+x[2] => cla2:U_CLA2_2.x[0]
+x[3] => cla2:U_CLA2_2.x[1]
+y[0] => cla2:U_CLA2_1.y[0]
+y[1] => cla2:U_CLA2_1.y[1]
+y[2] => cla2:U_CLA2_2.y[0]
+y[3] => cla2:U_CLA2_2.y[1]
+cin => cla2:U_CLA2_1.cin
+cin => cgen2:U_CGEN2.Ci
+s[0] <= cla2:U_CLA2_1.s[0]
+s[1] <= cla2:U_CLA2_1.s[1]
+s[2] <= cla2:U_CLA2_2.s[0]
+s[3] <= cla2:U_CLA2_2.s[1]
+cout <= cgen2:U_CGEN2.Ci2
+BP <= cgen2:U_CGEN2.BP
+BG <= cgen2:U_CGEN2.BG
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_1|cla2:U_CLA2_1
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_1|cla2:U_CLA2_2
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_1|cgen2:U_CGEN2
+Ci => Ci1.IN0
+Ci => Ci2.IN1
+Pi => Ci1.IN1
+Pi => Ci2.IN0
+Gi => Ci1.IN1
+Gi => Ci2.IN0
+Pi1 => Ci2.IN1
+Pi1 => Ci2.IN1
+Gi1 => Ci2.IN1
+Ci1 <= Ci1.DB_MAX_OUTPUT_PORT_TYPE
+Ci2 <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BP <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BG <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_2
+x[0] => cla2:U_CLA2_1.x[0]
+x[1] => cla2:U_CLA2_1.x[1]
+x[2] => cla2:U_CLA2_2.x[0]
+x[3] => cla2:U_CLA2_2.x[1]
+y[0] => cla2:U_CLA2_1.y[0]
+y[1] => cla2:U_CLA2_1.y[1]
+y[2] => cla2:U_CLA2_2.y[0]
+y[3] => cla2:U_CLA2_2.y[1]
+cin => cla2:U_CLA2_1.cin
+cin => cgen2:U_CGEN2.Ci
+s[0] <= cla2:U_CLA2_1.s[0]
+s[1] <= cla2:U_CLA2_1.s[1]
+s[2] <= cla2:U_CLA2_2.s[0]
+s[3] <= cla2:U_CLA2_2.s[1]
+cout <= cgen2:U_CGEN2.Ci2
+BP <= cgen2:U_CGEN2.BP
+BG <= cgen2:U_CGEN2.BG
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_2|cla2:U_CLA2_1
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_2|cla2:U_CLA2_2
+x[0] => p[0].IN0
+x[0] => g[0].IN0
+x[1] => p[1].IN0
+x[1] => g[1].IN0
+y[0] => p[0].IN1
+y[0] => g[0].IN1
+y[1] => p[1].IN1
+y[1] => g[1].IN1
+cin => carry.IN1
+cin => cout.IN1
+cin => s.IN1
+s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bp <= cout.DB_MAX_OUTPUT_PORT_TYPE
+bg <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|adder:U_ADDER|cla4:U_CLA4_2|cgen2:U_CGEN2
+Ci => Ci1.IN0
+Ci => Ci2.IN1
+Pi => Ci1.IN1
+Pi => Ci2.IN0
+Gi => Ci1.IN1
+Gi => Ci2.IN0
+Pi1 => Ci2.IN1
+Pi1 => Ci2.IN1
+Gi1 => Ci2.IN1
+Ci1 <= Ci1.DB_MAX_OUTPUT_PORT_TYPE
+Ci2 <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BP <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BG <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|adder:U_ADDER|cgen2:U_CGEN2
+Ci => Ci1.IN0
+Ci => Ci2.IN1
+Pi => Ci1.IN1
+Pi => Ci2.IN0
+Gi => Ci1.IN1
+Gi => Ci2.IN0
+Pi1 => Ci2.IN1
+Pi1 => Ci2.IN1
+Gi1 => Ci2.IN1
+Ci1 <= Ci1.DB_MAX_OUTPUT_PORT_TYPE
+Ci2 <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BP <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+BG <= Ci2.DB_MAX_OUTPUT_PORT_TYPE
+
+

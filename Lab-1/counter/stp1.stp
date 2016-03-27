@@ -1,0 +1,193 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP3C16/EP4CE15 (0x020F20DD)" sof_file="" top_level_entity="counter">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="window position" size="9" value="1304,706,398,66,0,100,0,0,0"/>
+  </global_info>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="data horizontal scroll position" value="46"/>
+      <single attribute="zoom level numerator" value="8"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="16368"/>
+      <single attribute="zoom offset denominator" value="1"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2016/01/19 14:04:20  #0">
+      <clock name="clk" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="128" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="clr_n" tap_mode="classic" type="input pin"/>
+          <wire name="data0" tap_mode="classic" type="input pin"/>
+          <wire name="data1" tap_mode="classic" type="input pin"/>
+          <wire name="data2" tap_mode="classic" type="input pin"/>
+          <wire name="data3" tap_mode="classic" type="input pin"/>
+          <wire name="data4" tap_mode="classic" type="input pin"/>
+          <wire name="data5" tap_mode="classic" type="input pin"/>
+          <wire name="data6" tap_mode="classic" type="input pin"/>
+          <wire name="data7" tap_mode="classic" type="input pin"/>
+          <wire name="enable" tap_mode="classic" type="input pin"/>
+          <wire name="ld_n" tap_mode="classic" type="input pin"/>
+          <wire name="output0" tap_mode="classic" type="output pin"/>
+          <wire name="output1" tap_mode="classic" type="output pin"/>
+          <wire name="output2" tap_mode="classic" type="output pin"/>
+          <wire name="output3" tap_mode="classic" type="output pin"/>
+          <wire name="output4" tap_mode="classic" type="output pin"/>
+          <wire name="output5" tap_mode="classic" type="output pin"/>
+          <wire name="output6" tap_mode="classic" type="output pin"/>
+          <wire name="output7" tap_mode="classic" type="output pin"/>
+          <wire name="rco" tap_mode="classic" type="output pin"/>
+          <wire name="rco_int" tap_mode="classic" type="combinatorial"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="clr_n" tap_mode="classic" type="input pin"/>
+          <wire name="data0" tap_mode="classic" type="input pin"/>
+          <wire name="data1" tap_mode="classic" type="input pin"/>
+          <wire name="data2" tap_mode="classic" type="input pin"/>
+          <wire name="data3" tap_mode="classic" type="input pin"/>
+          <wire name="data4" tap_mode="classic" type="input pin"/>
+          <wire name="data5" tap_mode="classic" type="input pin"/>
+          <wire name="data6" tap_mode="classic" type="input pin"/>
+          <wire name="data7" tap_mode="classic" type="input pin"/>
+          <wire name="enable" tap_mode="classic" type="input pin"/>
+          <wire name="ld_n" tap_mode="classic" type="input pin"/>
+          <wire name="output0" tap_mode="classic" type="output pin"/>
+          <wire name="output1" tap_mode="classic" type="output pin"/>
+          <wire name="output2" tap_mode="classic" type="output pin"/>
+          <wire name="output3" tap_mode="classic" type="output pin"/>
+          <wire name="output4" tap_mode="classic" type="output pin"/>
+          <wire name="output5" tap_mode="classic" type="output pin"/>
+          <wire name="output6" tap_mode="classic" type="output pin"/>
+          <wire name="output7" tap_mode="classic" type="output pin"/>
+          <wire name="rco" tap_mode="classic" type="output pin"/>
+          <wire name="rco_int" tap_mode="classic" type="combinatorial"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="clr_n" tap_mode="classic" type="input pin"/>
+          <wire name="data0" tap_mode="classic" type="input pin"/>
+          <wire name="data1" tap_mode="classic" type="input pin"/>
+          <wire name="data2" tap_mode="classic" type="input pin"/>
+          <wire name="data3" tap_mode="classic" type="input pin"/>
+          <wire name="data4" tap_mode="classic" type="input pin"/>
+          <wire name="data5" tap_mode="classic" type="input pin"/>
+          <wire name="data6" tap_mode="classic" type="input pin"/>
+          <wire name="data7" tap_mode="classic" type="input pin"/>
+          <wire name="enable" tap_mode="classic" type="input pin"/>
+          <wire name="ld_n" tap_mode="classic" type="input pin"/>
+          <wire name="output0" tap_mode="classic" type="output pin"/>
+          <wire name="output1" tap_mode="classic" type="output pin"/>
+          <wire name="output2" tap_mode="classic" type="output pin"/>
+          <wire name="output3" tap_mode="classic" type="output pin"/>
+          <wire name="output4" tap_mode="classic" type="output pin"/>
+          <wire name="output5" tap_mode="classic" type="output pin"/>
+          <wire name="output6" tap_mode="classic" type="output pin"/>
+          <wire name="output7" tap_mode="classic" type="output pin"/>
+          <wire name="rco" tap_mode="classic" type="output pin"/>
+          <wire name="rco_int" tap_mode="classic" type="combinatorial"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="clr_n"/>
+          <bus is_signal_inverted="no" link="all" name="Group" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="input pin">
+            <net is_signal_inverted="no" name="data0"/>
+            <net is_signal_inverted="no" name="data1"/>
+            <net is_signal_inverted="no" name="data2"/>
+            <net is_signal_inverted="no" name="data3"/>
+            <net is_signal_inverted="no" name="data4"/>
+            <net is_signal_inverted="no" name="data5"/>
+            <net is_signal_inverted="no" name="data6"/>
+            <net is_signal_inverted="no" name="data7"/>
+          </bus>
+          <net is_signal_inverted="no" name="enable"/>
+          <net is_signal_inverted="no" name="ld_n"/>
+          <bus is_signal_inverted="no" link="all" name="Group (1)" order="lsb_to_msb" radix="unsigned_dec" state="expand" type="output pin">
+            <net is_signal_inverted="no" name="output0"/>
+            <net is_signal_inverted="no" name="output1"/>
+            <net is_signal_inverted="no" name="output2"/>
+            <net is_signal_inverted="no" name="output3"/>
+            <net is_signal_inverted="no" name="output4"/>
+            <net is_signal_inverted="no" name="output5"/>
+            <net is_signal_inverted="no" name="output6"/>
+            <net is_signal_inverted="no" name="output7"/>
+          </bus>
+          <net is_signal_inverted="no" name="rco"/>
+          <net is_signal_inverted="no" name="rco_int"/>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="clr_n"/>
+          <bus is_signal_inverted="no" link="all" name="Group" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="input pin">
+            <net is_signal_inverted="no" name="data0"/>
+            <net is_signal_inverted="no" name="data1"/>
+            <net is_signal_inverted="no" name="data2"/>
+            <net is_signal_inverted="no" name="data3"/>
+            <net is_signal_inverted="no" name="data4"/>
+            <net is_signal_inverted="no" name="data5"/>
+            <net is_signal_inverted="no" name="data6"/>
+            <net is_signal_inverted="no" name="data7"/>
+          </bus>
+          <net is_signal_inverted="no" name="enable"/>
+          <net is_signal_inverted="no" name="ld_n"/>
+          <bus is_signal_inverted="no" link="all" name="Group (1)" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="output0"/>
+            <net is_signal_inverted="no" name="output1"/>
+            <net is_signal_inverted="no" name="output2"/>
+            <net is_signal_inverted="no" name="output3"/>
+            <net is_signal_inverted="no" name="output4"/>
+            <net is_signal_inverted="no" name="output5"/>
+            <net is_signal_inverted="no" name="output6"/>
+            <net is_signal_inverted="no" name="output7"/>
+          </bus>
+          <net is_signal_inverted="no" name="rco"/>
+          <net is_signal_inverted="no" name="rco_int"/>
+        </setup_view>
+      </presentation>
+      <trigger CRC="6AB9D5A8" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2016/01/19 14:18:09  #0" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="no" name="condition1" type="basic">'rco' == rising edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>000000000000000000000
+            <pwr_up_transitional>000000000000000000000
+            </pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+        <log>
+          <data global_temp="1" name="log: 2016/01/19 14:18:09  #1" power_up_mode="false" sample_depth="113" trigger_position="1">111111111110101001100111111111111101001100111111111110011001100111111111111011001100111111111110111001100111111111111111001101111111111110000101100111111111111000101100111111111110100101100111111111111100101100111111111110010101100111111111111010101100111111111110110101100111111111111110101100111111111110001101100111111111111001101100111111111110101101100111111111111101101100111111111110011101100111111111111011101100111111111110111101100111111111111111101101111111111110000011100111111111111000011100111111111110100011100111111111111100011100111111111110010011100111111111111010011100111111111110110011100111111111111110011100111111111110001011100111111111111001011100111111111110101011100111111111111101011100111111111110011011100111111111111011011100111111111110111011100111111111111111011101111111111110000111100111111111111000111100111111111110100111100111111111111100111100111111111110010111100111111111111010111100111111111110110111100111111111111110111100111111111110001111100111111111111001111100111111111110101111100111111111111101111100111111111110011111100111111111111011111100111111111110111111100111111111111111111111111111111110000000000111111111111000000000111111111110100000000111111111111100000000111111111110010000000111111111111010000000111111111110110000000111111111111110000000111111111110001000000111111111111001000000111111111110101000000111111111111101000000111111111110011000000111111111111011000000111111111110111000000111111111111111000001111111111110000100000111111111111000100000111111111110100100000111111111111100100000111111111110010100000111111111111010100000111111111110110100000111111111111110100000111111111110001100000111111111111001100000111111111110101100000111111111111101100000111111111110011100000111111111111011100000111111111110111100000111111111111111100001111111111110000010000111111111111000010000111111111110100010000111111111111100010000111111111110010010000111111111111010010000111111111110110010000111111111111110010000111111111110001010000111111111111001010000111111111110101010000111111111111101010000111111111110011010000111111111111011010000111111111110111010000111111111111111010001111111111110000110000111111111111000110000111111111110100110000111111111111100110000111111111110010110000111111111111010110000111111111110110110000111111111111110110000111111111110001110000111111111111001110000111111111110101110000</data>
+          <extradata>1T111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
+        </log>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+</session>

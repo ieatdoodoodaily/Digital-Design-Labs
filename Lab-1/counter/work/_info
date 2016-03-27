@@ -1,0 +1,91 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\91sp2\modelsim_ase\examples
+Ecounter
+Z0 w1453227430
+Z1 DPx10 cycloneiii 20 cycloneiii_atom_pack 0 22 _CQgb^j]V:K=3QLU^8QUQ3
+Z2 DPx10 cycloneiii 21 cycloneiii_components 0 22 ?PD2SgR9D<[1TAIX58[J`0
+Z3 DPx4 ieee 16 vital_primitives 0 22 E9g6AWKAc2T]enMfl94If3
+Z4 DPx6 altera 11 dffeas_pack 0 22 AdU<F]5K6AT]On5HW5MVZ3
+Z5 DPx4 ieee 12 vital_timing 0 22 OBWK>;kUYmkG<OChK2lhV1
+Z6 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z7 DPx6 altera 28 altera_primitives_components 0 22 TLgz^mzWka?X89W_9JBaY1
+Z8 dC:\Users\Nick\Documents\Spring 2016\EEL 4712\Lab-1\counter
+Z9 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Lab-1/counter/simulation/modelsim/counter.vho
+Z10 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Lab-1/counter/simulation/modelsim/counter.vho
+l0
+L36
+VfQHJSJ5LD4fc0BE:>T;RM2
+!s100 c6j0MAchHV1KK9SXARTJ?0
+Z11 OV;C;6.5b;42
+32
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z14 DEx4 work 7 counter 0 22 fQHJSJ5LD4fc0BE:>T;RM2
+l172
+L90
+V>AGIPCgZVZQFkF30AmYKh3
+!s100 g3BE1RhbALXnVK0JFP;o>3
+R11
+32
+Z15 Mx7 6 altera 28 altera_primitives_components
+Z16 Mx6 4 ieee 14 std_logic_1164
+Z17 Mx5 4 ieee 12 vital_timing
+Z18 Mx4 6 altera 11 dffeas_pack
+Z19 Mx3 4 ieee 16 vital_primitives
+Z20 Mx2 10 cycloneiii 21 cycloneiii_components
+Z21 Mx1 10 cycloneiii 20 cycloneiii_atom_pack
+R12
+R13
+Ecounter_tb
+Z22 w1453095933
+Z23 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+R6
+R8
+Z24 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Lab-1/counter/counter_tb.vhd
+Z25 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Lab-1/counter/counter_tb.vhd
+l0
+L8
+VKTnlPh;ckWSi7^EJ@H=o01
+R11
+32
+R12
+R13
+!s100 >e0o99>EWXg5gUXc8^`_H3
+Atb
+R1
+R2
+R3
+R4
+R5
+R7
+R14
+R23
+R6
+DEx4 work 10 counter_tb 0 22 KTnlPh;ckWSi7^EJ@H=o01
+l41
+L11
+VABZ0PHW9I86@dG@WMi?GU2
+!s100 LFd@m<@Reg@^aA>L17dEQ1
+R11
+32
+Z26 Mx8 4 ieee 14 std_logic_1164
+Mx7 4 ieee 11 numeric_std
+Mx6 6 altera 28 altera_primitives_components
+R17
+R18
+R19
+R20
+R21
+R12
+R13

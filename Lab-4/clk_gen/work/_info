@@ -1,0 +1,222 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\Nick\Documents\Spring 2016\EEL 4712\Digital-Design-Labs\Lab-4\counter
+Eclk_div
+Z0 w1455519957
+Z1 DPx4 ieee 9 math_real 0 22 zjAF7SKfg_RPI0GT^n1N`1
+Z2 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z4 dC:\Users\Nick\Documents\Spring 2016\EEL 4712\Digital-Design-Labs\Lab-4\clk_gen
+Z5 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_div.vhd
+Z6 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_div.vhd
+l0
+L10
+V^dO2i=BK>h8EW2M>Mb2X?0
+Z7 OV;C;6.5b;42
+32
+Z8 o-work work -2002 -explicit -O0
+Z9 tExplicit 1
+!s100 c`n0N91bNJM`HgVe9A;Z_1
+Astr
+Z10 DEx4 work 7 counter 0 22 dMz3lc<Aa`G0;HmVV8QQo2
+R1
+R2
+R3
+Z11 DEx4 work 7 clk_div 0 22 ^dO2i=BK>h8EW2M>Mb2X?0
+l21
+L19
+VR]`IT8:DFnm^35e>zXKUa1
+R7
+32
+Z12 Mx3 4 ieee 14 std_logic_1164
+Z13 Mx2 4 ieee 11 numeric_std
+Z14 Mx1 4 ieee 9 math_real
+R8
+R9
+!s100 Mfg6h7NMCl^X@HhHVD;Fz2
+Eclk_div_tb
+Z15 w1455555389
+R2
+R3
+R4
+Z16 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_div_tb.vhd
+Z17 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_div_tb.vhd
+l0
+L5
+Voe7zJ20Sa5d@IVo;DPYKQ1
+R7
+32
+R8
+R9
+!s100 cg7?dOMWEl;3jZo0@zzO91
+Atb
+R2
+R3
+DEx4 work 10 clk_div_tb 0 22 oe7zJ20Sa5d@IVo;DPYKQ1
+l27
+L9
+V6B6W6HSe21<XRNQ<S1^_M2
+R7
+32
+Z18 Mx2 4 ieee 14 std_logic_1164
+Mx1 4 ieee 11 numeric_std
+R8
+R9
+!s100 HkbWH_aLKnUYACMUJ9VLC1
+Eclk_gen
+Z19 w1455587382
+R1
+R2
+R3
+R4
+Z20 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_gen.vhd
+Z21 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_gen.vhd
+l0
+L10
+V5VW[]Ubj^38iU6;zho3DV3
+R7
+32
+R8
+R9
+!s100 `bmMd^EYUVX=88bnm<]@:0
+Astr
+R11
+R1
+R2
+R3
+Z22 DEx4 work 7 clk_gen 0 22 5VW[]Ubj^38iU6;zho3DV3
+l30
+L21
+V_^<ikXEE6oSPX87]SYz343
+R7
+32
+R12
+R13
+R14
+R8
+R9
+!s100 dDPVB^C?22^cXMe;oo7Z93
+Eclk_gen_tb
+Z23 w1455578497
+R2
+R3
+R4
+Z24 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_gen_tb.vhd
+Z25 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/clk_gen_tb.vhd
+l0
+L5
+VXG>?IP]Mz;@P<k8Ye^dnb3
+R7
+32
+R8
+R9
+!s100 JkW@lnS3>]lI01loWS^A53
+Atb
+R1
+R22
+R2
+R3
+DEx4 work 10 clk_gen_tb 0 22 XG>?IP]Mz;@P<k8Ye^dnb3
+l25
+L8
+V^iM@Cbka[R^JO[dM@Y1MK1
+!s100 mE[JGRFj;NJ^NKZk5`OkH1
+R7
+32
+R12
+R13
+R14
+R8
+R9
+Ecomb_log
+Z26 w1455556514
+R3
+R4
+Z27 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/comb_log.vhd
+Z28 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/comb_log.vhd
+l0
+L8
+V<@QZ0?FdO5N19bSG`0Uz03
+R7
+32
+R8
+R9
+!s100 >Ann4YAmle8GDi[gT237@0
+Abhv
+R3
+DEx4 work 8 comb_log 0 22 <@QZ0?FdO5N19bSG`0Uz03
+l17
+L16
+VRhG8QhW2SR>DfK_1Ia;162
+R7
+32
+Z29 Mx1 4 ieee 14 std_logic_1164
+R8
+R9
+!s100 DY1nmB4Gg9IDRi8BXXecM2
+Ecounter
+Z30 w1455555179
+R1
+R2
+R3
+R4
+Z31 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/counter.vhd
+Z32 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/counter.vhd
+l0
+L10
+VdMz3lc<Aa`G0;HmVV8QQo2
+!s100 9zP[7NANA]gmi_?hANkMo1
+R7
+32
+R8
+R9
+Abhv
+R1
+R2
+R3
+R10
+l28
+L21
+Z33 V];3iedD7QlBi6>6]jG0kI2
+Z34 !s100 W9P>DndNl8EX[2:X@^>]b3
+R7
+32
+R12
+R13
+R14
+R8
+R9
+Egen_counter
+Z35 w1455572915
+R1
+R2
+R3
+R4
+Z36 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/gen_counter.vhd
+Z37 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-4/clk_gen/gen_counter.vhd
+l0
+L10
+VX>7H]Q>[M4Eh0]oJ^jaFO0
+R7
+32
+R8
+R9
+!s100 zIDdUkmI1Pg2=iEkBYThg2
+Abhv
+R1
+R2
+R3
+DEx4 work 11 gen_counter 0 22 X>7H]Q>[M4Eh0]oJ^jaFO0
+l29
+L22
+V:e8Ui5H0nZZRn?B63Ic>F3
+R7
+32
+R12
+R13
+R14
+R8
+R9
+!s100 anbSOPZgjZ70ki6cz4XED0
