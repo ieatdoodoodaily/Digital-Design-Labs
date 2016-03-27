@@ -1,7 +1,7 @@
 -- Nicholas Imamshah
 -- University of Florida
 -- EEL 4712: Digital Design, Stitt: Spring 2016
--- Lab 7: Small 8
+-- Lab 7: Small 8 ALU
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -67,11 +67,11 @@ begin
 			when C_SBCR =>
 				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
 				res   := temp1(WIDTH-1 downto 0);
-				--tempC(0) := 
+				tempC(0) := temp1(WIDTH); 
 			when C_CMPR =>
 				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
 				res   := temp1(WIDTH-1 downto 0);
-				--tempC(0) :=
+				tempC(0) := temp1(WIDTH);
 			when C_ANDR =>
 				res   := unsigned(input1 AND input2);
 				temp1 := '0' & res;
@@ -112,7 +112,7 @@ begin
 				temp1 := to_unsigned(0, WIDTH+1);
 				res   := (others => '0');
 			when C_LOAD =>
-				res   := unsigned(input1);
+				res   := unsigned(input2);
 				temp1 := '0' & res;
 			when C_MUL  =>
 				temp2 := unsigned(input1) * unsigned(input2);
@@ -131,7 +131,6 @@ begin
 		tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & input2(WIDTH-2 downto 0)));
 		csign := tempS(WIDTH-1);
 		
-		-- Set temp1
 		carry    <= tempC(0);
 		overflow <= tempC(0) XOR csign;
 		sign     <= temp1(WIDTH-1);
