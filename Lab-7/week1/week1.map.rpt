@@ -1,5 +1,5 @@
 Analysis & Synthesis report for week1
-Sun Mar 27 13:33:28 2016
+Mon Mar 28 09:55:44 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -14,13 +14,12 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
-  9. Logic Cells Representing Combinational Loops
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |alu
- 13. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 14. lpm_mult Parameter Settings by Entity Instance
- 15. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |alu
+ 12. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 13. lpm_mult Parameter Settings by Entity Instance
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +45,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 27 13:33:28 2016        ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 28 09:55:44 2016        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; week1                                        ;
 ; Top-level Entity Name              ; alu                                          ;
 ; Family                             ; Cyclone III                                  ;
-; Total logic elements               ; 132                                          ;
-;     Total combinational functions  ; 132                                          ;
+; Total logic elements               ; 145                                          ;
+;     Total combinational functions  ; 145                                          ;
 ;     Dedicated logic registers      ; 0                                            ;
 ; Total registers                    ; 0                                            ;
-; Total pins                         ; 32                                           ;
+; Total pins                         ; 33                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 1                                            ;
@@ -155,15 +154,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+
-; alu.vhd                          ; yes             ; User VHDL File               ; C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_mult.tdf                     ;
-; db/mult_19t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/db/mult_19t.tdf ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+
+; alu.vhd                          ; yes             ; User VHDL File               ; C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_mult.tdf                                 ;
+; db/mult_19t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/db/mult_19t.tdf ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------+
@@ -171,28 +170,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 132          ;
+; Estimated Total logic elements              ; 145          ;
 ;                                             ;              ;
-; Total combinational functions               ; 132          ;
+; Total combinational functions               ; 145          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 69           ;
-;     -- 3 input functions                    ; 37           ;
-;     -- <=2 input functions                  ; 26           ;
+;     -- 4 input functions                    ; 64           ;
+;     -- 3 input functions                    ; 39           ;
+;     -- <=2 input functions                  ; 42           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 93           ;
+;     -- normal mode                          ; 106          ;
 ;     -- arithmetic mode                      ; 39           ;
 ;                                             ;              ;
 ; Total registers                             ; 0            ;
 ;     -- Dedicated logic registers            ; 0            ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 32           ;
+; I/O pins                                    ; 33           ;
 ; Embedded Multiplier 9-bit elements          ; 1            ;
-; Maximum fan-out node                        ; sel[0]~input ;
+; Maximum fan-out node                        ; sel[3]~input ;
 ; Maximum fan-out                             ; 25           ;
-; Total fan-out                               ; 493          ;
-; Average fan-out                             ; 2.49         ;
+; Total fan-out                               ; 512          ;
+; Average fan-out                             ; 2.40         ;
 +---------------------------------------------+--------------+
 
 
@@ -201,7 +200,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
-; |alu                            ; 132 (132)         ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 32   ; 0            ; |alu                                        ; work         ;
+; |alu                            ; 145 (145)         ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 33   ; 0            ; |alu                                        ; work         ;
 ;    |lpm_mult:Mult0|             ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |alu|lpm_mult:Mult0                         ;              ;
 ;       |mult_19t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |alu|lpm_mult:Mult0|mult_19t:auto_generated ;              ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
@@ -226,17 +225,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; carry                                                  ;   ;
-; Number of logic cells representing combinational loops ; 1 ;
-+--------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
@@ -257,7 +245,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 13:1               ; 6 bits    ; 48 LEs        ; 42 LEs               ; 6 LEs                  ; No         ; |alu|Mux11                 ;
+; 15:1               ; 6 bits    ; 60 LEs        ; 42 LEs               ; 18 LEs                 ; No         ; |alu|Mux11                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -332,13 +320,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun Mar 27 13:33:27 2016
+    Info: Processing started: Mon Mar 28 09:55:37 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off week1 -c week1
 Info: Found 2 design units, including 1 entities, in source file alu.vhd
     Info: Found design unit 1: alu-BHV
     Info: Found entity 1: alu
 Info: Elaborating entity "alu" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at alu.vhd(49): inferring latch(es) for signal or variable "carry", which holds its previous value in one or more paths through the process
 Warning: Timing-Driven Synthesis is skipped because the Classic Timing Analyzer is turned on
 Info: Inferred 1 megafunctions from design logic
     Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
@@ -355,15 +342,15 @@ Info: Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
     Info: Parameter "MAXIMIZE_SPEED" = "5"
 Info: Found 1 design units, including 1 entities, in source file db/mult_19t.tdf
     Info: Found entity 1: mult_19t
-Info: Implemented 165 device resources after synthesis - the final resource count might be different
-    Info: Implemented 20 input pins
+Info: Implemented 179 device resources after synthesis - the final resource count might be different
+    Info: Implemented 21 input pins
     Info: Implemented 12 output pins
-    Info: Implemented 132 logic cells
+    Info: Implemented 145 logic cells
     Info: Implemented 1 DSP elements
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 256 megabytes
-    Info: Processing ended: Sun Mar 27 13:33:28 2016
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 262 megabytes
+    Info: Processing ended: Mon Mar 28 09:55:44 2016
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:08
 
 

@@ -15,11 +15,12 @@ entity alu is
 		input1   : in std_logic_vector(WIDTH-1 downto 0);
 		input2   : in std_logic_vector(WIDTH-1 downto 0);
 		sel      : in std_logic_vector(3 downto 0);
+		cin      : in std_logic;
 		output   : out std_logic_vector(WIDTH-1 downto 0);
-		carry    : buffer std_logic;
-		overflow : buffer std_logic;
-		sign     : buffer std_logic;
-		zero     : buffer std_logic
+		cout     : out std_logic;
+		overflow : out std_logic;
+		sign     : out std_logic;
+		zero     : out std_logic
 	);
 end alu;
 
@@ -28,25 +29,24 @@ architecture BHV of alu is
 	-- Constants for ALU operations
 	constant C_ADCR : std_logic_vector(3 downto 0) := "0000";
 	constant C_SBCR : std_logic_vector(3 downto 0) := "0001";
-	constant C_CMPR : std_logic_vector(3 downto 0) := "0010";
-	constant C_ANDR : std_logic_vector(3 downto 0) := "0011";
-	constant C_ORR  : std_logic_vector(3 downto 0) := "0100";
-	constant C_XORR : std_logic_vector(3 downto 0) := "0101";
-	constant C_SLRL : std_logic_vector(3 downto 0) := "0110";
-	constant C_SRRL : std_logic_vector(3 downto 0) := "0111";
-	constant C_ROLC : std_logic_vector(3 downto 0) := "1000";
-	constant C_RORC : std_logic_vector(3 downto 0) := "1001";
-	constant C_DECR : std_logic_vector(3 downto 0) := "1010";
-	constant C_INCR : std_logic_vector(3 downto 0) := "1011";
-	constant C_SETC : std_logic_vector(3 downto 0) := "1100";
-	constant C_CLRC : std_logic_vector(3 downto 0) := "1101";
-	constant C_LOAD : std_logic_vector(3 downto 0) := "1110";
-	constant C_MUL  : std_logic_vector(3 downto 0) := "1111";
+	constant C_ANDR : std_logic_vector(3 downto 0) := "0010";
+	constant C_ORR  : std_logic_vector(3 downto 0) := "0011";
+	constant C_XORR : std_logic_vector(3 downto 0) := "0100";
+	constant C_SLRL : std_logic_vector(3 downto 0) := "0101";
+	constant C_SRRL : std_logic_vector(3 downto 0) := "0110";
+	constant C_ROLC : std_logic_vector(3 downto 0) := "0111";
+	constant C_RORC : std_logic_vector(3 downto 0) := "1000";
+	constant C_DECR : std_logic_vector(3 downto 0) := "1001";
+	constant C_INCR : std_logic_vector(3 downto 0) := "1010";
+	constant C_SETC : std_logic_vector(3 downto 0) := "1011";
+	constant C_CLRC : std_logic_vector(3 downto 0) := "1100";
+	constant C_LOAD : std_logic_vector(3 downto 0) := "1101";
+	constant C_MUL  : std_logic_vector(3 downto 0) := "1110";
 	
 	constant C_0    : std_logic_vector(WIDTH-1 downto 0) := (others => '0');
 	
 begin
-	process(input1, input2, sel, carry)
+	process(input1, input2, sel, cin)
 		
 		variable temp1 : unsigned(WIDTH downto 0);
 		variable temp2 : unsigned(2*WIDTH-1 downto 0);
@@ -57,7 +57,7 @@ begin
 		
 	begin
 		
-		tempC(0) := carry;
+		tempC(0) := cin;
 		
 		case sel is
 			when C_ADCR =>
@@ -65,10 +65,6 @@ begin
 				res   := temp1(WIDTH-1 downto 0);
 				tempC(0) := temp1(WIDTH);
 			when C_SBCR =>
-				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
-				res   := temp1(WIDTH-1 downto 0);
-				tempC(0) := temp1(WIDTH); 
-			when C_CMPR =>
 				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
 				res   := temp1(WIDTH-1 downto 0);
 				tempC(0) := temp1(WIDTH);
@@ -131,7 +127,8 @@ begin
 		tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & input2(WIDTH-2 downto 0)));
 		csign := tempS(WIDTH-1);
 		
-		carry    <= tempC(0);
+		--carry    <= tempC(0);
+		cout     <= tempC(0);
 		overflow <= tempC(0) XOR csign;
 		sign     <= temp1(WIDTH-1);
 		if temp1 = unsigned(C_0) then
