@@ -1,19 +1,22 @@
 -- Nicholas Imamshah
 -- University of Florida
 -- EEL 4712: Digital Design, Stitt: Spring 2016
--- Lab 7: Small 8 Bus
+-- Lab 7: Small 8 Generic Bus
 
 library ieee;
-use.std_logic_1164.all;
+use ieee.std_logic_1164.all;
+use ieee.math_real.all;
+use work.mux_pkg.all;
 
 entity bus is 
 	generic (
-		WIDTH  : positive := 8;
-		INPUTS : positive := 8
+		WIDTH    : positive := 8;
+		INPUTS   : positive := 10;
+		SEL_BITS : real     := ceil(LOG2(real(INPUTS)))
 	);
 	port (
-		input  : in std_logic_vector(INPUTS-1 downto 0);
-		w_en   : in std_logic_vector(INPUTS-1 downto 0);
+		input  : mux_inputs(0 to INPUTS-1);
+		w_en   : in std_logic_vector(SEL_BITS-1 downto 0);
 		output : out std_logic_vector(WIDTH-1 downto 0)
 	);
 end bus;
@@ -21,16 +24,16 @@ end bus;
 architecture STR of bus is
 begin
 
-	U_BUS : for i in 0 to INPUTS-1 generate
-		U_MUX : entity work.mux_2x1
-			generic map (
-				WIDTH  => WIDTH
-			)
-			port map (
-				x      => (others => '0'),
-				y      => input(i),
-				sel    => w_en(i),
-				output => 
-			);
+	U_MUX : entity work.mux
+		generic map (
+			WIDTH    => WIDTH,
+			INPUTS   => INPUTS,
+			SEL_BITS => SEL_BITS
+		)
+		port map (
+			input  => input,
+			sel    => w_en,
+			output => output
+		);
 
 end BHV;

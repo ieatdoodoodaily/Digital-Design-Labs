@@ -10,8 +10,8 @@ entity mux_2x1 is
 	generic (
 		WIDTH : positive := 8);
 	port (
-		x    : in std_logic_vector(WIDTH-1 downto 0);
-		y    : in std_logic_vector(WIDTH-1 downto 0);
+		input1 : in std_logic_vector(WIDTH-1 downto 0);
+		input2 : in std_logic_vector(WIDTH-1 downto 0);
 		sel    : in std_logic;
 		output : out std_logic_vector(WIDTH-1 downto 0)
 	);
@@ -21,6 +21,6 @@ architecture BHV of mux_2x1 is
 begin
 	with sel select
 		output <= 
-		x   when '0',
-		y	when others;
+		input1 when '0',
+		input2 when others;
 end BHV;
