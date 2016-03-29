@@ -6,6 +6,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 	
-package mux8_pkg is
-	type mux_inputs is array(natural range<>) of std_logic_vector(7 downto 0);
-end mux8_pkg;
+package mux16_pkg is
+	type mux16_inputs is array(natural range<>) of std_logic_vector(15 downto 0);
+end mux16_pkg;

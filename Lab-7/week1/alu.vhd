@@ -41,7 +41,7 @@ architecture BHV of alu is
 	constant C_SETC : std_logic_vector(3 downto 0) := "1011";
 	constant C_CLRC : std_logic_vector(3 downto 0) := "1100";
 	constant C_LOAD : std_logic_vector(3 downto 0) := "1101";
-	constant C_MUL  : std_logic_vector(3 downto 0) := "1110";
+	--constant C_MUL  : std_logic_vector(3 downto 0) := "1110";
 	
 	constant C_0    : std_logic_vector(WIDTH-1 downto 0) := (others => '0');
 	
@@ -58,16 +58,19 @@ begin
 	begin
 		
 		tempC(0) := cin;
+		tempS    := (others => '0');
 		
 		case sel is
 			when C_ADCR =>
 				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
 				res   := temp1(WIDTH-1 downto 0);
 				tempC(0) := temp1(WIDTH);
+				tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & input2(WIDTH-2 downto 0)));
 			when C_SBCR =>
-				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
+				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(NOT tempC), WIDTH+1);
 				res   := temp1(WIDTH-1 downto 0);
 				tempC(0) := temp1(WIDTH);
+				tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & (NOT input2(WIDTH-2 downto 0))));
 			when C_ANDR =>
 				res   := unsigned(input1 AND input2);
 				temp1 := '0' & res;
@@ -108,15 +111,15 @@ begin
 				temp1 := to_unsigned(0, WIDTH+1);
 				res   := (others => '0');
 			when C_LOAD =>
-				res   := unsigned(input2);
+				res   := unsigned(input1);
 				temp1 := '0' & res;
-			when C_MUL  =>
-				temp2 := unsigned(input1) * unsigned(input2);
-				temp1 := temp2(WIDTH downto 0);
-				res   := temp2(WIDTH-1 downto 0);
-				if temp2 > (2**(WIDTH)-1) then
-					overflow <= '1';
-				end if;
+			--when C_MUL  =>
+			--	temp2 := unsigned(input1) * unsigned(input2);
+			--	temp1 := temp2(WIDTH downto 0);
+			--	res   := temp2(WIDTH-1 downto 0);
+			--	if temp2 > (2**(WIDTH)-1) then
+			--		overflow <= '1';
+			--	end if;
 			when others =>
 				res   := to_unsigned(0, WIDTH);
 				temp1 := '0' & res;
@@ -124,14 +127,12 @@ begin
 		
 		output <= std_logic_vector(res(WIDTH-1 downto 0));
 		
-		tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & input2(WIDTH-2 downto 0)));
 		csign := tempS(WIDTH-1);
 		
-		--carry    <= tempC(0);
 		cout     <= tempC(0);
 		overflow <= tempC(0) XOR csign;
 		sign     <= temp1(WIDTH-1);
-		if temp1 = unsigned(C_0) then
+		if temp1(WIDTH-1 downto 0) = unsigned(C_0) then
 			zero <= '1';
 		else
 			zero <= '0';

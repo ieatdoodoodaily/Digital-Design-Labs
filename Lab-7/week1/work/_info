@@ -1,0 +1,422 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\Nick\Documents\EEL 4712\alu_ns
+Ealu
+Z0 w1459229122
+Z1 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z3 dC:\Users\Nick\Documents\EEL 4712\Digital-Design-Labs\Lab-7\week1
+Z4 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd
+Z5 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd
+l0
+L10
+V4f0HnXfZTKTMBW8hAN7n51
+Z6 OV;C;6.5b;42
+32
+Z7 o-work work -2002 -explicit -O0
+Z8 tExplicit 1
+!s100 hLRlTMR@YCOLoYBzhDBO41
+Abhv
+R1
+R2
+Z9 DEx4 work 3 alu 0 22 4f0HnXfZTKTMBW8hAN7n51
+l48
+L27
+VneUi=f>UJcIDcb?hAzO_U3
+R6
+32
+Z10 Mx2 4 ieee 14 std_logic_1164
+Z11 Mx1 4 ieee 11 numeric_std
+R7
+R8
+!s100 h33fGTY5EM9`DO0IQMlN43
+Ealu_tb
+Z12 w1459229390
+R1
+R2
+R3
+Z13 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu_tb.vhd
+Z14 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu_tb.vhd
+l0
+L10
+V6_0Z:ag3KLaX>eb5n;SKa0
+R6
+32
+R7
+R8
+!s100 ]7O6DCcjN<O]9_SUlci5B3
+Atb
+R9
+R1
+R2
+DEx4 work 6 alu_tb 0 22 6_0Z:ag3KLaX>eb5n;SKa0
+l44
+L13
+VR72;lKoUDO>gXflkLLKN=2
+R6
+32
+R10
+R11
+R7
+R8
+!s100 YG0[2XCU8TbeONT@aO2]b2
+Edatapath
+Z15 w1459234833
+Z16 DPx4 work 9 mux16_pkg 0 22 gXhRcJc]@<>J75^dLRj_93
+Z17 DPx4 work 8 mux8_pkg 0 22 QAM9Z=?oY3T]6^m;RJ`j<0
+Z18 DPx4 ieee 9 math_real 0 22 zjAF7SKfg_RPI0GT^n1N`1
+R2
+R3
+Z19 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath.vhd
+Z20 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath.vhd
+l0
+L12
+VfKZ6GnIXoT5fUaenfag[21
+R6
+32
+R7
+R8
+!s100 [Df;<W99GAGRTm<Ni1SLG2
+Astr
+R1
+R9
+Z21 DEx4 work 8 my_bus16 0 22 0miS=Tnk2Q9@ohgX>S]VS2
+Z22 DEx4 work 3 reg 0 22 L7NTKJ<oOga?03@OLz=Yg0
+Z23 DEx4 work 7 my_bus8 0 22 zzYN?RV`BPG9_hJN:7RB]1
+R16
+R17
+R18
+R2
+Z24 DEx4 work 8 datapath 0 22 fKZ6GnIXoT5fUaenfag[21
+l89
+L58
+V?4N<@HMX@9<^;Hf^9`Y;C3
+R6
+32
+Z25 Mx5 4 ieee 14 std_logic_1164
+Mx4 4 ieee 9 math_real
+Mx3 4 work 8 mux8_pkg
+Z26 Mx2 4 work 9 mux16_pkg
+R11
+R7
+R8
+!s100 U`@BIS<_SO1BN9]GmG@kJ2
+Edatapath_tb
+Z27 w1459241121
+R1
+R2
+R3
+Z28 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath_tb.vhd
+Z29 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath_tb.vhd
+l0
+L10
+VkTfcKUzB;F3bOS]g`AD5_3
+R6
+32
+R7
+R8
+!s100 kZ7_9O4kRFkGj2GB?o2=S0
+Atb
+R16
+R17
+R18
+R24
+R1
+R2
+DEx4 work 11 datapath_tb 0 22 kTfcKUzB;F3bOS]g`AD5_3
+l56
+L13
+VCV?KRBbgTS]X_aP5B<0S:3
+R6
+32
+R25
+Mx4 4 ieee 11 numeric_std
+Z30 Mx3 4 ieee 9 math_real
+Z31 Mx2 4 work 8 mux8_pkg
+Z32 Mx1 4 work 9 mux16_pkg
+R7
+R8
+!s100 >HW_NE=^YfCZE;VzWTbo11
+Egen_mux
+Z33 w1459212829
+Z34 DPx4 work 7 mux_pkg 0 22 CDkXEzo8k::ADF4D@105S2
+R18
+R1
+R2
+R3
+Z35 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux.vhd
+Z36 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux.vhd
+l0
+L12
+VQiYI^dnf7HdE0J54TbSH12
+R6
+32
+R7
+R8
+!s100 ?H97d12?QfB_^_YdHHZcB1
+Abhv
+R34
+R18
+R1
+R2
+Z37 DEx4 work 7 gen_mux 0 22 QiYI^dnf7HdE0J54TbSH12
+l26
+L25
+V7@CJ7B[iO@Od6D4o`Az]X1
+R6
+32
+Z38 Mx4 4 ieee 14 std_logic_1164
+Z39 Mx3 4 ieee 11 numeric_std
+Z40 Mx2 4 ieee 9 math_real
+Mx1 4 work 7 mux_pkg
+R7
+R8
+!s100 FlbIW<m7P_hPhXHCjh_W71
+Egen_mux16
+Z41 w1459234940
+R16
+R18
+R1
+R2
+R3
+Z42 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux16.vhd
+Z43 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux16.vhd
+l0
+L12
+VS;<9^FhQ@1ZPRNLSkH0b:0
+R6
+32
+R7
+R8
+!s100 UR4F@7A[nLDP2XTYmn^TP0
+Abhv
+R16
+R18
+R1
+R2
+Z44 DEx4 work 9 gen_mux16 0 22 S;<9^FhQ@1ZPRNLSkH0b:0
+l26
+L25
+VnTmh5[nl`^N9IFfX9iKcR0
+R6
+32
+R38
+R39
+R40
+R32
+R7
+R8
+!s100 S3Ngj5<;2ndLmbQ0L5DRE0
+Egen_mux8
+Z45 w1459234916
+R17
+R18
+R1
+R2
+R3
+Z46 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux8.vhd
+Z47 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux8.vhd
+l0
+L12
+VJ9a=J;1f:eZM_<bl[T97C1
+R6
+32
+R7
+R8
+!s100 m_R19J=T:Y:>Z8do:nb612
+Abhv
+R17
+R18
+R1
+R2
+Z48 DEx4 work 8 gen_mux8 0 22 J9a=J;1f:eZM_<bl[T97C1
+l26
+L25
+V]i3c[zH1=@VB8io[HO_KH0
+R6
+32
+R38
+R39
+R40
+Mx1 4 work 8 mux8_pkg
+R7
+R8
+!s100 MhHYdfeo57R8SzECFg^KD3
+Pmux16_pkg
+R2
+w1459234428
+R3
+8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux16_pkg.vhd
+FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux16_pkg.vhd
+l0
+L9
+VgXhRcJc]@<>J75^dLRj_93
+R6
+32
+Z49 Mx1 4 ieee 14 std_logic_1164
+R7
+R8
+!s100 MEkFj5[<3ELDN;eRS3?F42
+Pmux8_pkg
+R2
+w1459234421
+R3
+8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux8_pkg.vhd
+FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux8_pkg.vhd
+l0
+L9
+VQAM9Z=?oY3T]6^m;RJ`j<0
+R6
+32
+R49
+R7
+R8
+!s100 1P@Tzi6`PI4D9H`QkPken0
+Pmux_pkg
+R2
+w1459210539
+R3
+8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux_pkg.vhd
+FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux_pkg.vhd
+l0
+L9
+VCDkXEzo8k::ADF4D@105S2
+R6
+32
+R49
+R7
+R8
+!s100 ^jzCIM;o^A<eNPSnWb[I01
+Emy_bus
+Z50 w1459212849
+R34
+R18
+R2
+R3
+Z51 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus.vhd
+Z52 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus.vhd
+l0
+L11
+Vg<7oJ8b_?hMgkCo:2;dCk2
+R6
+32
+R7
+R8
+!s100 :>fO:OzAO=b@7[jJS@m>j0
+Astr
+R1
+R37
+R34
+R18
+R2
+DEx4 work 6 my_bus 0 22 g<7oJ8b_?hMgkCo:2;dCk2
+l25
+L24
+VKNRW08SBS?:H;<AQ8AjG<0
+R6
+32
+R38
+R30
+Mx2 4 work 7 mux_pkg
+R11
+R7
+R8
+!s100 UbG?CdfAWR?7K]l]kG7oM0
+Emy_bus16
+Z53 w1459234865
+R16
+R18
+R2
+R3
+Z54 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus16.vhd
+Z55 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus16.vhd
+l0
+L11
+V0miS=Tnk2Q9@ohgX>S]VS2
+!s100 ;Kng7cF>g;BG6F6C=7>@F2
+R6
+32
+R7
+R8
+Astr
+R1
+R44
+R16
+R18
+R2
+R21
+l25
+L24
+Z56 V_lDK=KQh_WlSQVB`nK_<32
+Z57 !s100 ogOS`hEHk6NA;Y?n[mW3_3
+R6
+32
+R38
+R30
+R26
+R11
+R7
+R8
+Emy_bus8
+Z58 w1459234885
+R17
+R18
+R2
+R3
+Z59 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus8.vhd
+Z60 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus8.vhd
+l0
+L11
+VzzYN?RV`BPG9_hJN:7RB]1
+R6
+32
+R7
+R8
+!s100 BW=`Zza7@aE[bMA1[ome:0
+Astr
+R1
+R48
+R17
+R18
+R2
+R23
+l25
+L24
+VfTII@^ScH;_o;ZL1DJ>HP3
+!s100 HbU;U[`]70bS@XgK<Rma:2
+R6
+32
+R38
+R30
+R31
+R11
+R7
+R8
+Ereg
+Z61 w1459207977
+R2
+R3
+Z62 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/reg.vhd
+Z63 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/reg.vhd
+l0
+L9
+VL7NTKJ<oOga?03@OLz=Yg0
+R6
+32
+R7
+R8
+!s100 AEcGjV5;WMToETY3KY8:61
+Abhv
+R2
+R22
+l23
+L22
+VUnV:mRe3=EMD>XgObj97;3
+R6
+32
+R49
+R7
+R8
+!s100 5DE6=`D3acU_=l6YP1i[33
