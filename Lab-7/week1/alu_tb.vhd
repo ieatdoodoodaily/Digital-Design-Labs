@@ -59,8 +59,8 @@ begin
 	
 	process
 		variable tempC  : std_logic_vector(0 downto 0);
+		variable diff   : std_logic_vector(WIDTH downto 0);
 	begin
-		cin      <= '0';
 		tempC(0) := cin;
 		for i in 0 to SELS**2-1 loop
 			sel <= std_logic_vector(to_unsigned(i, SELS));
@@ -75,10 +75,15 @@ begin
 					case sel is
 						when C_ADCR =>
 							-- + resize(unsigned(tempC), WIDTH)
-							assert(output = std_logic_vector(unsigned(input1) + unsigned(input2))) report "Error: ADCR" severity warning;
+							assert(output = std_logic_vector(unsigned(input1) + unsigned(input2) + resize(unsigned(tempC), WIDTH))) report "Error: ADCR" severity warning;
 						when C_SBCR =>
+							cin <= '1';
+							tempC(0) := '1';
+							wait for 5 ns;
 							-- - resize(unsigned(tempC), WIDTH)
-							assert(output = std_logic_vector(unsigned(input1) - unsigned(input2))) report "Error: SBCR" severity warning;
+							-- std_logic_vector(unsigned(input1) - unsigned(input2) + resize(unsigned(tempC), WIDTH))
+							diff := std_logic_vector(to_signed(j - k, WIDTH+1));
+							assert(output = diff(WIDTH-1 downto 0)) report "Error: SBCR" severity warning;
 						when C_ANDR =>
 							assert(output = (input1 AND input2)) report "Error: ANDR" severity warning;
 						when C_ORR  =>
@@ -108,13 +113,13 @@ begin
 					
 					-- Check carry flag
 					if (sel = C_ADCR) then
-						if ((unsigned(input1) + unsigned(input2)) > WIDTH**2-1) then
+						if ((resize(unsigned(input1), WIDTH+1) + resize(unsigned(input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1)) > (WIDTH**2-1)) then
 							assert(cout = '1') report "Error: cout should = 1" severity warning;
 						else
 							assert(cout = '0') report "Error: cout should = 0" severity warning;
 						end if;
 					elsif (sel = C_SBCR) then
-						if ((unsigned(input1) < unsigned(input2))) then
+						if (j-k < 0) then
 							assert(cout = '1') report "Error: cout should = 1" severity warning;
 						else
 							assert(cout = '0') report "Error: cout should = 0" severity warning;
@@ -133,8 +138,10 @@ begin
 						end if;
 					elsif (sel = C_SETC) then
 						assert(cout = '1') report "Error: cout should = 1" severity warning;
-					else
+					elsif (sel = C_CLRC) then
 						assert(cout = '0') report "Error: cout should = 0" severity warning;
+					else
+						assert(cout = cin) report "Error: cout should = 0" severity warning;
 					end if;
 
 					-- Check overflow flag

@@ -75,6 +75,8 @@ architecture STR of datapath is
 	
 	signal acc_out      : std_logic_vector(WIDTH-1 downto 0);
 	
+	signal alu_out      : std_logic_vector(WIDTH-1 downto 0);
+	
 	-- Internal Bus Signals
 	signal int_in       : mux8_inputs(0 to 9);
 	signal int_out      : std_logic_vector(WIDTH-1 downto 0);
@@ -328,11 +330,24 @@ begin
 			input2   => int_out,
 			sel      => alu_sels,
 			cin      => int_c(0),
-			output   => int_in(8),
+			output   => alu_out,
 			cout     => int_c(0),
 			overflow => int_v(0),
 			sign     => int_s(0),
 			zero     => int_z(0)
+		);
+	
+		
+	U_ALU_REG : entity work.reg
+		generic map (
+			WIDTH => WIDTH
+		)
+		port map (
+			input  => alu_out,
+			clk    => clk,
+			rst    => rst,
+			en     => '1',
+			output => int_in(8)
 		);
 	
 	-- Status registers ##############################

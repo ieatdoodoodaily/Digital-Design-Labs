@@ -1,0 +1,337 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\Nick\Documents\Spring 2016\EEL 4712\Digital-Design-Labs\Lab-7\week1
+Ealu
+Z0 w1459241771
+Z1 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z3 dC:\Users\Nick\Documents\Spring 2016\EEL 4712\Digital-Design-Labs\Lab-7\week_1
+Z4 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/alu.vhd
+Z5 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/alu.vhd
+l0
+L10
+V`lb_1KiQWc4]47SF0<MIm2
+Z6 OV;C;6.5b;42
+32
+Z7 o-work work -2002 -O0
+Z8 tExplicit 1
+!s100 hLRlTMR@YCOLoYBzhDBO41
+Abhv
+R1
+R2
+Z9 DEx4 work 3 alu 0 22 `lb_1KiQWc4]47SF0<MIm2
+l48
+L27
+VDRQbglfleo368k5Bec:W;0
+R6
+32
+Z10 Mx2 4 ieee 14 std_logic_1164
+Z11 Mx1 4 ieee 11 numeric_std
+R7
+R8
+!s100 h33fGTY5EM9`DO0IQMlN43
+Ealu_tb
+Z12 w1459241771
+R1
+R2
+R3
+Z13 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/alu_tb.vhd
+Z14 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/alu_tb.vhd
+l0
+L10
+V_T3eCa8LS<RJZm`UR5V:30
+R6
+32
+R7
+R8
+!s100 ]7O6DCcjN<O]9_SUlci5B3
+Atb
+R9
+R1
+R2
+DEx4 work 6 alu_tb 0 22 _T3eCa8LS<RJZm`UR5V:30
+l44
+L13
+VdF5SS3=FjL?EM<[kAz1Zj2
+R6
+32
+R10
+R11
+R7
+R8
+!s100 z4bBDNCDUoojm82QFAgOH0
+Edatapath
+R12
+Z15 DPx4 work 9 mux16_pkg 0 22 SYU_4lJNfO2cUg;6_c9i]1
+Z16 DPx4 work 8 mux8_pkg 0 22 >`nRF1Z4eR@Z?fDPaWQP93
+Z17 DPx4 ieee 9 math_real 0 22 zjAF7SKfg_RPI0GT^n1N`1
+R2
+R3
+Z18 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/datapath.vhd
+Z19 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/datapath.vhd
+l0
+L12
+V6VcE@]bYkC2zn2mAh@`FU1
+R6
+32
+R7
+R8
+!s100 [Df;<W99GAGRTm<Ni1SLG2
+Astr
+R1
+R9
+Z20 DEx4 work 8 my_bus16 0 22 RIzSYIgQFeb9O8f45c:EL0
+Z21 DEx4 work 3 reg 0 22 DH64H8EVXXO;O1?1:RXc>3
+Z22 DEx4 work 7 my_bus8 0 22 83mN072MmczLC?GFJRGKY3
+R15
+R16
+R17
+R2
+Z23 DEx4 work 8 datapath 0 22 6VcE@]bYkC2zn2mAh@`FU1
+l89
+L58
+VX?OU`FOb;hi4<C6;d;lNz3
+R6
+32
+Z24 Mx5 4 ieee 14 std_logic_1164
+Mx4 4 ieee 9 math_real
+Mx3 4 work 8 mux8_pkg
+Z25 Mx2 4 work 9 mux16_pkg
+R11
+R7
+R8
+!s100 U`@BIS<_SO1BN9]GmG@kJ2
+Edatapath_tb
+R12
+R1
+R2
+R3
+Z26 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/datapath_tb.vhd
+Z27 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/datapath_tb.vhd
+l0
+L10
+VKoV;AK;nfOCn`LndQ>SV[0
+R6
+32
+R7
+R8
+!s100 kZ7_9O4kRFkGj2GB?o2=S0
+Atb
+R15
+R16
+R17
+R23
+R1
+R2
+DEx4 work 11 datapath_tb 0 22 KoV;AK;nfOCn`LndQ>SV[0
+l56
+L13
+V]JGY?B[R6<;3TI84b`5NK1
+R6
+32
+R24
+Mx4 4 ieee 11 numeric_std
+Z28 Mx3 4 ieee 9 math_real
+Z29 Mx2 4 work 8 mux8_pkg
+Z30 Mx1 4 work 9 mux16_pkg
+R7
+R8
+!s100 >HW_NE=^YfCZE;VzWTbo11
+Egen_mux16
+R12
+R15
+R17
+R1
+R2
+R3
+Z31 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/gen_mux16.vhd
+Z32 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/gen_mux16.vhd
+l0
+L12
+V]Bek<SfJ79mU]2A:I<CT_1
+R6
+32
+R7
+R8
+!s100 UR4F@7A[nLDP2XTYmn^TP0
+Abhv
+R15
+R17
+R1
+R2
+Z33 DEx4 work 9 gen_mux16 0 22 ]Bek<SfJ79mU]2A:I<CT_1
+l26
+L25
+VS5VGP@2>LYlR3C_fj_fb33
+R6
+32
+Z34 Mx4 4 ieee 14 std_logic_1164
+Z35 Mx3 4 ieee 11 numeric_std
+Z36 Mx2 4 ieee 9 math_real
+R30
+R7
+R8
+!s100 S3Ngj5<;2ndLmbQ0L5DRE0
+Egen_mux8
+R12
+R16
+R17
+R1
+R2
+R3
+Z37 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/gen_mux8.vhd
+Z38 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/gen_mux8.vhd
+l0
+L12
+VM7YcK[jU^:_R[lESdQBI60
+R6
+32
+R7
+R8
+!s100 m_R19J=T:Y:>Z8do:nb612
+Abhv
+R16
+R17
+R1
+R2
+Z39 DEx4 work 8 gen_mux8 0 22 M7YcK[jU^:_R[lESdQBI60
+l26
+L25
+V^XIhBTEaS7mAe>kU8S[@A2
+R6
+32
+R34
+R35
+R36
+Mx1 4 work 8 mux8_pkg
+R7
+R8
+!s100 MhHYdfeo57R8SzECFg^KD3
+Pmux16_pkg
+R2
+R12
+R3
+8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/mux16_pkg.vhd
+FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/mux16_pkg.vhd
+l0
+L9
+VSYU_4lJNfO2cUg;6_c9i]1
+R6
+32
+Z40 Mx1 4 ieee 14 std_logic_1164
+R7
+R8
+!s100 MEkFj5[<3ELDN;eRS3?F42
+Pmux8_pkg
+R2
+R12
+R3
+8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/mux8_pkg.vhd
+FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/mux8_pkg.vhd
+l0
+L9
+V>`nRF1Z4eR@Z?fDPaWQP93
+R6
+32
+R40
+R7
+R8
+!s100 1P@Tzi6`PI4D9H`QkPken0
+Emy_bus16
+R12
+R15
+R17
+R2
+R3
+Z41 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/my_bus16.vhd
+Z42 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/my_bus16.vhd
+l0
+L11
+VRIzSYIgQFeb9O8f45c:EL0
+R6
+32
+R7
+R8
+!s100 ;Kng7cF>g;BG6F6C=7>@F2
+Astr
+R1
+R33
+R15
+R17
+R2
+R20
+l25
+L24
+VYzg5iG7nEkbUIE>EJRT;j1
+R6
+32
+R34
+R28
+R25
+R11
+R7
+R8
+!s100 ogOS`hEHk6NA;Y?n[mW3_3
+Emy_bus8
+R12
+R16
+R17
+R2
+R3
+Z43 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/my_bus8.vhd
+Z44 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/my_bus8.vhd
+l0
+L11
+V83mN072MmczLC?GFJRGKY3
+R6
+32
+R7
+R8
+!s100 BW=`Zza7@aE[bMA1[ome:0
+Astr
+R1
+R39
+R16
+R17
+R2
+R22
+l25
+L24
+Vo;7;jW?_Lcn3WelK]X>[Y0
+R6
+32
+R34
+R28
+R29
+R11
+R7
+R8
+!s100 HbU;U[`]70bS@XgK<Rma:2
+Ereg
+Z45 w1459172432
+R2
+R3
+Z46 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/reg.vhd
+Z47 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week_1/reg.vhd
+l0
+L9
+VDH64H8EVXXO;O1?1:RXc>3
+!s100 AEcGjV5;WMToETY3KY8:61
+R6
+32
+R7
+R8
+Abhv
+R2
+R21
+l23
+L22
+Z48 Vn0jN7FfSl6[VS`KXVfV`l0
+Z49 !s100 5DE6=`D3acU_=l6YP1i[33
+R6
+32
+R40
+R7
+R8
