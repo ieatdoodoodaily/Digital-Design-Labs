@@ -64,17 +64,30 @@ architecture STR of datapath is
 	constant SEL_BITS   : integer  := integer(ceil(LOG2(real(INT_INPUTS))));
 	
 	-- Internal Signals
+	-- For flags
 	signal int_c        : std_logic_vector(0 downto 0);
 	signal int_v        : std_logic_vector(0 downto 0);
 	signal int_s        : std_logic_vector(0 downto 0);
 	signal int_z        : std_logic_vector(0 downto 0);
 	
+	-- For AR Register Outputs
 	signal ar_h_out     : std_logic_vector(WIDTH-1 downto 0);
 	signal ar_l_out     : std_logic_vector(WIDTH-1 downto 0);
 	
+	-- For PC Register Inputs
+	signal pc_h_in      : mux8_inputs(0 to 2);
+	signal pc_h_mux_out : std_logic_vector(WIDTH-1 downto 0);
+	signal pc_h_sel     : std_logic_vector(1 downto 0);
+	
+	signal pc_l_in      : mux8_inputs(0 to 2);
+	signal pc_l_mux_out : std_logic_vector(WIDTH-1 downto 0);
+	signal pc_l_sel     : std_logic_vector(1 downto 0);
+	
+	-- For PC Register Outputs
 	signal pc_h_out     : std_logic_vector(WIDTH-1 downto 0);
 	signal pc_l_out     : std_logic_vector(WIDTH-1 downto 0);
-	
+
+	-- For X Register Inputs
 	signal x_h_in       : mux8_inputs(0 to 1);
 	signal x_h_mux_out  : std_logic_vector(WIDTH-1 downto 0);
 	signal x_h_sel      : std_logic_vector(0 downto 0);
@@ -85,7 +98,8 @@ architecture STR of datapath is
 	
 	signal x_incr_sel   : std_logic_vector(0 downto 0);
 	signal x_incr_out   : std_logic_vector(2*WIDTH-1 downto 0);
-	
+
+	-- For X Register Outputs
 	signal x_h_out      : std_logic_vector(WIDTH-1 downto 0);
 	signal x_l_out      : std_logic_vector(WIDTH-1 downto 0);
 	
@@ -93,9 +107,11 @@ architecture STR of datapath is
 	signal xb_out       : std_logic_vector(2*WIDTH-1 downto 0);
 	
 	signal b_out        : std_logic_vector(WIDTH-1 downto 0);
-	
+
+	-- For Accumulator Output
 	signal acc_out      : std_logic_vector(WIDTH-1 downto 0);
-	
+
+	-- For ALU Output
 	signal alu_out      : std_logic_vector(WIDTH-1 downto 0);
 	
 	-- Internal Bus Signals
