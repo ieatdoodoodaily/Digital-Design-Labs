@@ -19,7 +19,7 @@ architecture TB of datapath_tb is
 	signal int_w_en    : std_logic_vector(3 downto 0) := (others => '0');
 	signal ext_w_en    : std_logic_vector(1 downto 0) := (others => '0');
 	signal addr_w_en   : std_logic_vector(0 downto 0) := (others => '0');
-	signal alu_sels    : std_logic_vector(3 downto 0) := (others => '0');
+	signal alu_sels    : std_logic_vector(3 downto 0) := "1100";
 	signal switches    : std_logic_vector(7 downto 0) := (others => '0');
 	
 	signal ar_h_en     : std_logic                    := '0';
@@ -33,6 +33,7 @@ architecture TB of datapath_tb is
 	signal sp_l_en     : std_logic                    := '0';
 	signal x_h_en      : std_logic                    := '0';
 	signal x_l_en      : std_logic                    := '0';
+	signal b_en        : std_logic                    := '0';
 	signal c_en        : std_logic                    := '0';
 	signal v_en        : std_logic                    := '0';
 	signal s_en        : std_logic                    := '0';
@@ -79,6 +80,7 @@ begin
 			sp_l_en     => sp_l_en,
 			x_h_en      => x_h_en,
 			x_l_en      => x_l_en,
+			b_en        => b_en,
 			c_en        => c_en,
 			v_en        => v_en,
 			s_en        => s_en,
@@ -102,7 +104,7 @@ begin
 		
 	process
 	begin
-	
+		alu_sels <= "1100";
 		-- To show that each resource can read/write to the bus, we'll first load
 		-- numbers counting up from 0, so that we can distinguish which resource was written
 		-- AR_H = 0, AR_L = 1, IR = 2, PC_H = 3, PC_L = 4, D = 5, A = 6, SP_H = 7, SP_L = 8
@@ -255,6 +257,18 @@ begin
 		outport0_en <= '1';
 		outport1_en <= '1';
 		
+		wait until clk'event and clk = '1';
+		alu_sels <= "0000";
+		
+		wait until clk'event and clk = '1';
+		int_w_en <= std_logic_vector(to_unsigned(8, 4)); -- w_en for ALU
+		
+		wait until clk'event and clk = '1';
+		outport0_en <= '1';
+		outport1_en <= '1';
+		
+		wait until clk'event and clk = '1';
+		wait until clk'event and clk = '1';
 		wait until clk'event and clk = '1';
 		
 		sim_done <= '1';

@@ -4,12 +4,12 @@ K3
 cModel Technology
 dC:\altera\91sp2\modelsim_ase\examples
 Ealu
-Z0 w1459271458
+Z0 w1459271460
 Z1 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
-Z3 dC:\Users\Nick\Documents\Spring 2016\EEL 4712\Digital-Design-Labs\Lab-7\week1
-Z4 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd
-Z5 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd
+Z3 dC:\Users\Nick\Documents\EEL 4712\Digital-Design-Labs\Lab-7\week1
+Z4 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd
+Z5 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu.vhd
 l0
 L10
 V4f0HnXfZTKTMBW8hAN7n51
@@ -33,12 +33,12 @@ R7
 R8
 !s100 ?=`KJnzZTGTm9^NSIJb:Y2
 Ealu_tb
-Z12 w1459272196
+Z12 w1459272198
 R1
 R2
 R3
-Z13 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu_tb.vhd
-Z14 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu_tb.vhd
+Z13 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu_tb.vhd
+Z14 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/alu_tb.vhd
 l0
 L10
 V6_0Z:ag3KLaX>eb5n;SKa0
@@ -63,14 +63,14 @@ R7
 R8
 !s100 A>hPBib<@J0^HgP^<ibez2
 Edatapath
-Z15 w1459273525
+Z15 w1459273526
 Z16 DPx4 work 9 mux16_pkg 0 22 gXhRcJc]@<>J75^dLRj_93
 Z17 DPx4 work 8 mux8_pkg 0 22 QAM9Z=?oY3T]6^m;RJ`j<0
 Z18 DPx4 ieee 9 math_real 0 22 zjAF7SKfg_RPI0GT^n1N`1
 R2
 R3
-Z19 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath.vhd
-Z20 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath.vhd
+Z19 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath.vhd
+Z20 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath.vhd
 l0
 L12
 VfKZ6GnIXoT5fUaenfag[21
@@ -104,12 +104,12 @@ R7
 R8
 !s100 jRT2f@XC?FCYnMoInFBM12
 Edatapath_tb
-Z27 w1459273739
+Z27 w1459273740
 R1
 R2
 R3
-Z28 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath_tb.vhd
-Z29 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath_tb.vhd
+Z28 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath_tb.vhd
+Z29 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/datapath_tb.vhd
 l0
 L10
 VkTfcKUzB;F3bOS]g`AD5_3
@@ -140,14 +140,14 @@ R7
 R8
 !s100 OI0<UXl7^]`o<H=lbBO6K0
 Egen_mux16
-Z33 w1459243121
+Z33 w1459243122
 R16
 R18
 R1
 R2
 R3
-Z34 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux16.vhd
-Z35 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux16.vhd
+Z34 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux16.vhd
+Z35 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux16.vhd
 l0
 L12
 VS;<9^FhQ@1ZPRNLSkH0b:0
@@ -181,8 +181,8 @@ R18
 R1
 R2
 R3
-Z40 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux8.vhd
-Z41 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux8.vhd
+Z40 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux8.vhd
+Z41 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/gen_mux8.vhd
 l0
 L12
 VJ9a=J;1f:eZM_<bl[T97C1
@@ -213,8 +213,8 @@ Pmux16_pkg
 R2
 R33
 R3
-8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux16_pkg.vhd
-FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux16_pkg.vhd
+8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux16_pkg.vhd
+FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux16_pkg.vhd
 l0
 L9
 VgXhRcJc]@<>J75^dLRj_93
@@ -228,8 +228,8 @@ Pmux8_pkg
 R2
 R33
 R3
-8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux8_pkg.vhd
-FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux8_pkg.vhd
+8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux8_pkg.vhd
+FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/mux8_pkg.vhd
 l0
 L9
 VQAM9Z=?oY3T]6^m;RJ`j<0
@@ -245,8 +245,8 @@ R16
 R18
 R2
 R3
-Z44 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus16.vhd
-Z45 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus16.vhd
+Z44 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus16.vhd
+Z45 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus16.vhd
 l0
 L11
 V0miS=Tnk2Q9@ohgX>S]VS2
@@ -280,8 +280,8 @@ R17
 R18
 R2
 R3
-Z46 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus8.vhd
-Z47 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus8.vhd
+Z46 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus8.vhd
+Z47 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/my_bus8.vhd
 l0
 L11
 VzzYN?RV`BPG9_hJN:7RB]1
@@ -313,8 +313,8 @@ Ereg
 R33
 R2
 R3
-Z48 8C:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/reg.vhd
-Z49 FC:/Users/Nick/Documents/Spring 2016/EEL 4712/Digital-Design-Labs/Lab-7/week1/reg.vhd
+Z48 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/reg.vhd
+Z49 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week1/reg.vhd
 l0
 L9
 VL7NTKJ<oOga?03@OLz=Yg0

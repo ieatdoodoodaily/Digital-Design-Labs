@@ -67,10 +67,15 @@ begin
 				tempC(0) := temp1(WIDTH);
 				tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & input2(WIDTH-2 downto 0)));
 			when C_SBCR =>
-				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(NOT tempC), WIDTH+1);
+				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
 				res   := temp1(WIDTH-1 downto 0);
-				tempC(0) := temp1(WIDTH);
-				tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & (NOT input2(WIDTH-2 downto 0))));
+				if (unsigned(input1) < unsigned(input2)) then
+					tempC(0) := '1';
+				else
+					tempC(0) := '0';
+				end if;
+				--tempC(0) := temp1(WIDTH);
+				tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) - unsigned('0' & (input2(WIDTH-2 downto 0))));
 			when C_ANDR =>
 				res   := unsigned(input1 AND input2);
 				temp1 := '0' & res;

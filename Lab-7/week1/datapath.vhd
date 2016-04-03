@@ -5,6 +5,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 use ieee.math_real.all;
 use work.mux8_pkg.all;
 use work.mux16_pkg.all;
@@ -19,7 +20,7 @@ entity datapath is
 		rst         : in std_logic;
 		int_w_en    : in std_logic_vector(3 downto 0);
 		ext_w_en    : in std_logic_vector(1 downto 0);
-		addr_w_en   : in std_logic_vector(0 downto 0);
+		addr_w_en   : in std_logic_vector(1 downto 0);
 		alu_sels    : in std_logic_vector(3 downto 0);
 		switches    : in std_logic_vector(7 downto 0);
 		
@@ -35,6 +36,7 @@ entity datapath is
 		sp_l_en     : in std_logic;
 		x_h_en      : in std_logic;
 		x_l_en      : in std_logic;
+		b_en        : in std_logic;
 		c_en        : in std_logic;
 		v_en        : in std_logic;
 		s_en        : in std_logic;
@@ -73,6 +75,25 @@ architecture STR of datapath is
 	signal pc_h_out     : std_logic_vector(WIDTH-1 downto 0);
 	signal pc_l_out     : std_logic_vector(WIDTH-1 downto 0);
 	
+	signal x_h_in       : mux8_inputs(0 to 1);
+	signal x_h_mux_out  : std_logic_vector(WIDTH-1 downto 0);
+	signal x_h_sel      : std_logic_vector(0 downto 0);
+	
+	signal x_l_in       : mux8_inputs(0 to 1);
+	signal x_l_mux_out  : std_logic_vector(WIDTH-1 downto 0);
+	signal x_l_sel      : std_logic_vector(0 downto 0);
+	
+	signal x_incr_sel   : std_logic_vector(0 downto 0);
+	signal x_incr_out   : std_logic_vector(2*WIDTH-1 downto 0);
+	
+	signal x_h_out      : std_logic_vector(WIDTH-1 downto 0);
+	signal x_l_out      : std_logic_vector(WIDTH-1 downto 0);
+	
+	signal x_out        : std_logic_vector(2*WIDTH-1 downto 0);
+	signal xb_out       : std_logic_vector(2*WIDTH-1 downto 0);
+	
+	signal b_out        : std_logic_vector(WIDTH-1 downto 0);
+	
 	signal acc_out      : std_logic_vector(WIDTH-1 downto 0);
 	
 	signal alu_out      : std_logic_vector(WIDTH-1 downto 0);
@@ -86,7 +107,7 @@ architecture STR of datapath is
 	signal ext_out      : std_logic_vector(WIDTH-1 downto 0);
 	
 	-- Address Bus Signals
-	signal addr_bus_in  : mux16_inputs(0 to 1);
+	signal addr_bus_in  : mux16_inputs(0 to 2);
 
 begin
 	
@@ -154,11 +175,13 @@ begin
 	-- Address Bus ##############################	
 	addr_bus_in(0) <= ar_h_out & ar_l_out;
 	addr_bus_in(1) <= pc_h_out & pc_l_out;
+	addr_bus_in(2) <= xb_out;
+	
 	U_ADDR_BUS : entity work.my_bus16
 		generic map (
 			WIDTH    => 16,
-			INPUTS   => 2,
-			SEL_BITS => 1
+			INPUTS   => 3,
+			SEL_BITS => 2
 		)
 		port map (
 			input  => addr_bus_in,
@@ -296,19 +319,78 @@ begin
 		);
 	
 	-- X registers ##############################
+	x_h_in(0) <= int_out;
+	x_h_in(1) <= x_incr_out(15 downto 8);
+	U_X_H_IN : entity work.gen_mux8
+		generic map (
+			WIDTH    => WIDTH,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input  => x_h_in,
+			sel    => x_h_sel,
+			output => x_h_mux_out
+		);
+	
 	U_X_H : entity work.reg
 		generic map (
 			WIDTH => WIDTH
 		)
 		port map (
-			input  => int_out,
+			input  => x_h_mux_out,
 			clk    => clk,
 			rst    => rst,
 			en     => x_h_en,
 			output => int_in(6)
 		);
+	x_h_out <= int_in(6);
 		
+	x_l_in(0) <= int_out;
+	x_l_in(1) <= x_incr_out(7 downto 0);
+	U_X_L_IN : entity work.gen_mux8
+		generic map (
+			WIDTH    => WIDTH,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input  => x_l_in,
+			sel    => x_l_sel,
+			output => x_l_mux_out
+		);	
+	
 	U_X_L : entity work.reg
+		generic map (
+			WIDTH => WIDTH
+		)
+		port map (
+			input  => x_l_mux_out,
+			clk    => clk,
+			rst    => rst,
+			en     => x_l_en,
+			output => int_in(7)
+		);
+	x_l_out <= int_in(7);
+		
+	x_out  <= x_h_out & x_l_out;
+	
+	U_X_INCR_MUX : entity work.gen_mux16
+		generic map (
+			WIDTH    => 16,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input(0) => std_logic_vector(to_signed(1, 16)),
+			input(1) => std_logic_vector(to_signed(-1, 16)),
+			sel      => x_incr_sel,
+			output   => x_incr_out
+		);
+		
+	-- b register ####################################
+	
+	U_b : entity work.reg
 		generic map (
 			WIDTH => WIDTH
 		)
@@ -316,10 +398,11 @@ begin
 			input  => int_out,
 			clk    => clk,
 			rst    => rst,
-			en     => x_l_en,
-			output => int_in(7)
+			en     => b_en,
+			output => b_out
 		);
-	
+		
+	xb_out <= std_logic_vector(resize(unsigned(x_out), 2*WIDTH) + resize(unsigned(b_out), 2*WIDTH));
 	-- ALU ###########################################
 	U_ALU : entity work.alu
 		generic map (
