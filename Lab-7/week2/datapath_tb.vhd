@@ -33,6 +33,7 @@ architecture TB of datapath_tb is
 	signal sp_l_en     : std_logic                    := '0';
 	signal x_h_en      : std_logic                    := '0';
 	signal x_l_en      : std_logic                    := '0';
+	signal b_en        : std_logic                    := '0';
 	signal c_en        : std_logic                    := '0';
 	signal v_en        : std_logic                    := '0';
 	signal s_en        : std_logic                    := '0';
@@ -79,6 +80,7 @@ begin
 			sp_l_en     => sp_l_en,
 			x_h_en      => x_h_en,
 			x_l_en      => x_l_en,
+			b_en        => b_en,
 			c_en        => c_en,
 			v_en        => v_en,
 			s_en        => s_en,

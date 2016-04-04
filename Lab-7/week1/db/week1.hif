@@ -256,7 +256,6 @@ reg:U_SP_H
 reg:U_SP_L
 reg:U_X_H
 reg:U_X_L
-reg:U_b
 reg:U_ALU_REG
 reg:U_EXT_REG
 reg:U_INT_REG
@@ -501,9 +500,6 @@ mux16_pkg.vhd
 gen_mux16.vhd
 6a57fa62ee3ee3a9f5e80b9386ea525
 }
-# hierarchies {
-my_bus16:U_ADDR_BUS
-}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -563,9 +559,6 @@ USR
 # include_file {
 mux16_pkg.vhd
 3038cc3830e57d841e1ff3183e86866
-}
-# hierarchies {
-my_bus16:U_ADDR_BUS|gen_mux16:U_MUX
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -628,7 +621,7 @@ mux16_pkg.vhd
 3038cc3830e57d841e1ff3183e86866
 }
 # hierarchies {
-gen_mux16:U_X_INCR_MUX
+my_bus16:U_ADDR_BUS|gen_mux16:U_MUX
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -690,9 +683,65 @@ USR
 mux8_pkg.vhd
 466e24f77aec4653244f9ece4622812e
 }
-# hierarchies {
-gen_mux8:U_X_H_IN
-gen_mux8:U_X_L_IN
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+gen_mux8
+# storage
+db|week1.(12).cnf
+db|week1.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+gen_mux8.vhd
+9cd5879733bb4e9deb2e0503225f660
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+width
+8
+PARAMETER_SIGNED_DEC
+USR
+inputs
+3
+PARAMETER_SIGNED_DEC
+USR
+sel_bits
+2
+PARAMETER_SIGNED_DEC
+USR
+ constraint(input)
+0 to 2
+PARAMETER_STRING
+USR
+ constraint(sel)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(output)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+mux8_pkg.vhd
+466e24f77aec4653244f9ece4622812e
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -712,7 +761,7 @@ ON
 # case_insensitive
 # source_file
 datapath.vhd
-21c1fef6a123fdcaf799dcc3f685692
+4d18aa83d7d9aff8bbe3e61488944ff
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -733,23 +782,88 @@ DEF
 # include_file {
 mux8_pkg.vhd
 466e24f77aec4653244f9ece4622812e
-my_bus8.vhd
-1bad7134284a1a1e268fa25773e1952e
+mux16_pkg.vhd
+3038cc3830e57d841e1ff3183e86866
+alu.vhd
+b7665bcbd72fe61b5b25d7d58c9f56b
+gen_mux16.vhd
+6a57fa62ee3ee3a9f5e80b9386ea525
 my_bus16.vhd
 d8b04f8e3458229dae4be35488b49ff
 reg.vhd
 377e20b4b5b2e5f669acbb623e39d57
-alu.vhd
-b7665bcbd72fe61b5b25d7d58c9f56b
+gen_mux8.vhd
+9cd5879733bb4e9deb2e0503225f660
+my_bus8.vhd
+1bad7134284a1a1e268fa25773e1952e
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+my_bus16
+# storage
+db|week1.(13).cnf
+db|week1.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+my_bus16.vhd
+d8b04f8e3458229dae4be35488b49ff
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+width
+16
+PARAMETER_SIGNED_DEC
+USR
+inputs
+2
+PARAMETER_SIGNED_DEC
+USR
+sel_bits
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(input)
+0 to 1
+PARAMETER_STRING
+USR
+ constraint(w_en)
+0 downto 0
+PARAMETER_STRING
+USR
+ constraint(output)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
 mux16_pkg.vhd
 3038cc3830e57d841e1ff3183e86866
 gen_mux16.vhd
 6a57fa62ee3ee3a9f5e80b9386ea525
-gen_mux8.vhd
-9cd5879733bb4e9deb2e0503225f660
 }
 # hierarchies {
-|
+my_bus16:U_ADDR_BUS
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf

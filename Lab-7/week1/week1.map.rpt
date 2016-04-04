@@ -1,5 +1,5 @@
 Analysis & Synthesis report for week1
-Sun Apr 03 16:16:29 2016
+Sun Apr 03 23:45:21 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -14,49 +14,43 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Logic Cells Representing Combinational Loops
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |datapath
- 13. Parameter Settings for User Entity Instance: my_bus8:U_EXT_BUS
- 14. Parameter Settings for User Entity Instance: my_bus8:U_EXT_BUS|gen_mux8:U_MUX
- 15. Parameter Settings for User Entity Instance: reg:U_INPORT0_REG
- 16. Parameter Settings for User Entity Instance: reg:U_INPORT1_REG
- 17. Parameter Settings for User Entity Instance: reg:U_OUTPORT0_REG
- 18. Parameter Settings for User Entity Instance: reg:U_OUTPORT1_REG
- 19. Parameter Settings for User Entity Instance: my_bus16:U_ADDR_BUS
- 20. Parameter Settings for User Entity Instance: my_bus16:U_ADDR_BUS|gen_mux16:U_MUX
- 21. Parameter Settings for User Entity Instance: my_bus8:U_INT_BUS
- 22. Parameter Settings for User Entity Instance: my_bus8:U_INT_BUS|gen_mux8:U_MUX
- 23. Parameter Settings for User Entity Instance: reg:U_AR_H
- 24. Parameter Settings for User Entity Instance: reg:U_AR_L
- 25. Parameter Settings for User Entity Instance: reg:U_IR
- 26. Parameter Settings for User Entity Instance: reg:U_PC_H
- 27. Parameter Settings for User Entity Instance: reg:U_PC_L
- 28. Parameter Settings for User Entity Instance: reg:U_D
- 29. Parameter Settings for User Entity Instance: reg:U_A
- 30. Parameter Settings for User Entity Instance: reg:U_SP_H
- 31. Parameter Settings for User Entity Instance: reg:U_SP_L
- 32. Parameter Settings for User Entity Instance: gen_mux8:U_X_H_IN
- 33. Parameter Settings for User Entity Instance: reg:U_X_H
- 34. Parameter Settings for User Entity Instance: gen_mux8:U_X_L_IN
- 35. Parameter Settings for User Entity Instance: reg:U_X_L
- 36. Parameter Settings for User Entity Instance: gen_mux16:U_X_INCR_MUX
- 37. Parameter Settings for User Entity Instance: reg:U_b
- 38. Parameter Settings for User Entity Instance: alu:U_ALU
- 39. Parameter Settings for User Entity Instance: reg:U_ALU_REG
- 40. Parameter Settings for User Entity Instance: reg:U_C_REG
- 41. Parameter Settings for User Entity Instance: reg:U_V_REG
- 42. Parameter Settings for User Entity Instance: reg:U_S_REG
- 43. Parameter Settings for User Entity Instance: reg:U_Z_REG
- 44. Parameter Settings for User Entity Instance: reg:U_EXT_REG
- 45. Parameter Settings for User Entity Instance: reg:U_INT_REG
- 46. Port Connectivity Checks: "reg:U_INT_REG"
- 47. Port Connectivity Checks: "reg:U_EXT_REG"
- 48. Port Connectivity Checks: "reg:U_ALU_REG"
- 49. Port Connectivity Checks: "gen_mux16:U_X_INCR_MUX"
- 50. Port Connectivity Checks: "my_bus8:U_EXT_BUS"
- 51. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |datapath
+ 12. Parameter Settings for User Entity Instance: my_bus8:U_EXT_BUS
+ 13. Parameter Settings for User Entity Instance: my_bus8:U_EXT_BUS|gen_mux8:U_MUX
+ 14. Parameter Settings for User Entity Instance: reg:U_INPORT0_REG
+ 15. Parameter Settings for User Entity Instance: reg:U_INPORT1_REG
+ 16. Parameter Settings for User Entity Instance: reg:U_OUTPORT0_REG
+ 17. Parameter Settings for User Entity Instance: reg:U_OUTPORT1_REG
+ 18. Parameter Settings for User Entity Instance: my_bus16:U_ADDR_BUS
+ 19. Parameter Settings for User Entity Instance: my_bus16:U_ADDR_BUS|gen_mux16:U_MUX
+ 20. Parameter Settings for User Entity Instance: my_bus8:U_INT_BUS
+ 21. Parameter Settings for User Entity Instance: my_bus8:U_INT_BUS|gen_mux8:U_MUX
+ 22. Parameter Settings for User Entity Instance: reg:U_AR_H
+ 23. Parameter Settings for User Entity Instance: reg:U_AR_L
+ 24. Parameter Settings for User Entity Instance: reg:U_IR
+ 25. Parameter Settings for User Entity Instance: reg:U_PC_H
+ 26. Parameter Settings for User Entity Instance: reg:U_PC_L
+ 27. Parameter Settings for User Entity Instance: reg:U_D
+ 28. Parameter Settings for User Entity Instance: reg:U_A
+ 29. Parameter Settings for User Entity Instance: reg:U_SP_H
+ 30. Parameter Settings for User Entity Instance: reg:U_SP_L
+ 31. Parameter Settings for User Entity Instance: reg:U_X_H
+ 32. Parameter Settings for User Entity Instance: reg:U_X_L
+ 33. Parameter Settings for User Entity Instance: alu:U_ALU
+ 34. Parameter Settings for User Entity Instance: reg:U_ALU_REG
+ 35. Parameter Settings for User Entity Instance: reg:U_C_REG
+ 36. Parameter Settings for User Entity Instance: reg:U_V_REG
+ 37. Parameter Settings for User Entity Instance: reg:U_S_REG
+ 38. Parameter Settings for User Entity Instance: reg:U_Z_REG
+ 39. Parameter Settings for User Entity Instance: reg:U_EXT_REG
+ 40. Parameter Settings for User Entity Instance: reg:U_INT_REG
+ 41. Port Connectivity Checks: "reg:U_INT_REG"
+ 42. Port Connectivity Checks: "reg:U_EXT_REG"
+ 43. Port Connectivity Checks: "reg:U_ALU_REG"
+ 44. Port Connectivity Checks: "my_bus8:U_EXT_BUS"
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -82,16 +76,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 03 16:16:29 2016        ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 03 23:45:21 2016        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; week1                                        ;
 ; Top-level Entity Name              ; datapath                                     ;
 ; Family                             ; Cyclone III                                  ;
-; Total logic elements               ; 353                                          ;
-;     Total combinational functions  ; 241                                          ;
-;     Dedicated logic registers      ; 141                                          ;
-; Total registers                    ; 141                                          ;
-; Total pins                         ; 86                                           ;
+; Total logic elements               ; 348                                          ;
+;     Total combinational functions  ; 228                                          ;
+;     Dedicated logic registers      ; 148                                          ;
+; Total registers                    ; 148                                          ;
+; Total pins                         ; 84                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -213,27 +207,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 353       ;
+; Estimated Total logic elements              ; 348       ;
 ;                                             ;           ;
-; Total combinational functions               ; 241       ;
+; Total combinational functions               ; 228       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 137       ;
-;     -- 3 input functions                    ; 63        ;
-;     -- <=2 input functions                  ; 41        ;
+;     -- 4 input functions                    ; 130       ;
+;     -- 3 input functions                    ; 66        ;
+;     -- <=2 input functions                  ; 32        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 181       ;
-;     -- arithmetic mode                      ; 60        ;
+;     -- normal mode                          ; 176       ;
+;     -- arithmetic mode                      ; 52        ;
 ;                                             ;           ;
-; Total registers                             ; 141       ;
-;     -- Dedicated logic registers            ; 141       ;
+; Total registers                             ; 148       ;
+;     -- Dedicated logic registers            ; 148       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 86        ;
+; I/O pins                                    ; 84        ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 141       ;
-; Total fan-out                               ; 1474      ;
-; Average fan-out                             ; 2.66      ;
+; Maximum fan-out                             ; 148       ;
+; Total fan-out                               ; 1466      ;
+; Average fan-out                             ; 2.69      ;
 +---------------------------------------------+-----------+
 
 
@@ -242,14 +236,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
-; |datapath                  ; 241 (27)          ; 141 (0)      ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |datapath                                     ; work         ;
-;    |alu:U_ALU|             ; 139 (139)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:U_ALU                           ; work         ;
-;    |my_bus16:U_ADDR_BUS|   ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus16:U_ADDR_BUS                 ; work         ;
-;       |gen_mux16:U_MUX|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus16:U_ADDR_BUS|gen_mux16:U_MUX ; work         ;
+; |datapath                  ; 228 (0)           ; 148 (0)      ; 0           ; 0            ; 0       ; 0         ; 84   ; 0            ; |datapath                                     ; work         ;
+;    |alu:U_ALU|             ; 138 (138)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:U_ALU                           ; work         ;
+;    |my_bus16:U_ADDR_BUS|   ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus16:U_ADDR_BUS                 ; work         ;
+;       |gen_mux16:U_MUX|    ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus16:U_ADDR_BUS|gen_mux16:U_MUX ; work         ;
 ;    |my_bus8:U_EXT_BUS|     ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_EXT_BUS                   ;              ;
 ;       |gen_mux8:U_MUX|     ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_EXT_BUS|gen_mux8:U_MUX    ;              ;
-;    |my_bus8:U_INT_BUS|     ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_INT_BUS                   ; work         ;
-;       |gen_mux8:U_MUX|     ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_INT_BUS|gen_mux8:U_MUX    ; work         ;
+;    |my_bus8:U_INT_BUS|     ; 51 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_INT_BUS                   ; work         ;
+;       |gen_mux8:U_MUX|     ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_INT_BUS|gen_mux8:U_MUX    ;              ;
 ;    |reg:U_ALU_REG|         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_ALU_REG                       ; work         ;
 ;    |reg:U_AR_H|            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_AR_H                          ; work         ;
 ;    |reg:U_AR_L|            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_AR_L                          ; work         ;
@@ -269,9 +263,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |reg:U_SP_L|            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_SP_L                          ; work         ;
 ;    |reg:U_S_REG|           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_S_REG                         ; work         ;
 ;    |reg:U_V_REG|           ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_V_REG                         ; work         ;
-;    |reg:U_X_L|             ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_X_L                           ; work         ;
+;    |reg:U_X_H|             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_X_H                           ; work         ;
+;    |reg:U_X_L|             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_X_L                           ; work         ;
 ;    |reg:U_Z_REG|           ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_Z_REG                         ; work         ;
-;    |reg:U_b|               ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_b                             ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -287,43 +281,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; reg:U_X_L|output[1..7]                 ; Stuck at GND due to stuck port data_in ;
-; reg:U_X_H|output[0..7]                 ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 15 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 141   ;
+; Total registers                              ; 148   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 141   ;
+; Number of registers using Asynchronous Clear ; 148   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 112   ;
+; Number of registers using Clock Enable       ; 120   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 1:1                ; 15 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |datapath|reg:U_X_H|output[5]                       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |datapath|my_bus16:U_ADDR_BUS|gen_mux16:U_MUX|Mux12 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|my_bus8:U_EXT_BUS|gen_mux8:U_MUX|Mux7     ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |datapath|my_bus8:U_INT_BUS|gen_mux8:U_MUX|Mux1     ;
-; 15:1               ; 5 bits    ; 50 LEs        ; 30 LEs               ; 20 LEs                 ; No         ; |datapath|alu:U_ALU|Mux2                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|my_bus8:U_EXT_BUS|gen_mux8:U_MUX|Mux6 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |datapath|my_bus8:U_INT_BUS|gen_mux8:U_MUX|Mux2 ;
+; 15:1               ; 5 bits    ; 50 LEs        ; 30 LEs               ; 20 LEs                 ; No         ; |datapath|alu:U_ALU|Mux2                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -406,8 +387,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                    ;
 +----------------+-------+-----------------------------------------+
 ; width          ; 16    ; Signed Integer                          ;
-; inputs         ; 3     ; Signed Integer                          ;
-; sel_bits       ; 2     ; Signed Integer                          ;
+; inputs         ; 2     ; Signed Integer                          ;
+; sel_bits       ; 1     ; Signed Integer                          ;
 +----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -418,8 +399,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                    ;
 +----------------+-------+---------------------------------------------------------+
 ; width          ; 16    ; Signed Integer                                          ;
-; inputs         ; 3     ; Signed Integer                                          ;
-; sel_bits       ; 2     ; Signed Integer                                          ;
+; inputs         ; 2     ; Signed Integer                                          ;
+; sel_bits       ; 1     ; Signed Integer                                          ;
 +----------------+-------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -538,18 +519,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_mux8:U_X_H_IN ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; width          ; 8     ; Signed Integer                        ;
-; inputs         ; 2     ; Signed Integer                        ;
-; sel_bits       ; 1     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +--------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: reg:U_X_H ;
 +----------------+-------+-------------------------------+
@@ -560,18 +529,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_mux8:U_X_L_IN ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; width          ; 8     ; Signed Integer                        ;
-; inputs         ; 2     ; Signed Integer                        ;
-; sel_bits       ; 1     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +--------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: reg:U_X_L ;
 +----------------+-------+-------------------------------+
@@ -579,28 +536,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------+
 ; width          ; 8     ; Signed Integer                ;
 +----------------+-------+-------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_mux16:U_X_INCR_MUX ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; width          ; 16    ; Signed Integer                             ;
-; inputs         ; 2     ; Signed Integer                             ;
-; sel_bits       ; 1     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: reg:U_b ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-; width          ; 8     ; Signed Integer              ;
-+----------------+-------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -711,17 +646,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+-----------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "gen_mux16:U_X_INCR_MUX" ;
-+-----------------+-------+----------+---------------+
-; Port            ; Type  ; Severity ; Details       ;
-+-----------------+-------+----------+---------------+
-; input[0][15..1] ; Input ; Info     ; Stuck at GND  ;
-; input[0][0]     ; Input ; Info     ; Stuck at VCC  ;
-; input[1]        ; Input ; Info     ; Stuck at VCC  ;
-+-----------------+-------+----------+---------------+
-
-
 +-----------------------------------------------+
 ; Port Connectivity Checks: "my_bus8:U_EXT_BUS" ;
 +----------+-------+----------+-----------------+
@@ -737,7 +661,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun Apr 03 16:16:26 2016
+    Info: Processing started: Sun Apr 03 23:45:18 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off week1 -c week1
 Info: Found 2 design units, including 1 entities, in source file alu.vhd
     Info: Found design unit 1: alu-BHV
@@ -771,10 +695,7 @@ Info: Found 2 design units, including 1 entities, in source file reg.vhd
     Info: Found design unit 1: reg-BHV
     Info: Found entity 1: reg
 Info: Elaborating entity "datapath" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(80): used implicit default value for signal "x_h_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(84): used implicit default value for signal "x_l_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(86): used implicit default value for signal "x_incr_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10873): Using initial value X (don't care) for net "ext_in[3]" at datapath.vhd(106)
+Warning (10873): Using initial value X (don't care) for net "ext_in[3]" at datapath.vhd(85)
 Info: Elaborating entity "my_bus8" for hierarchy "my_bus8:U_EXT_BUS"
 Info: Elaborating entity "gen_mux8" for hierarchy "my_bus8:U_EXT_BUS|gen_mux8:U_MUX"
 Info: Elaborating entity "reg" for hierarchy "reg:U_INPORT0_REG"
@@ -782,24 +703,20 @@ Info: Elaborating entity "my_bus16" for hierarchy "my_bus16:U_ADDR_BUS"
 Info: Elaborating entity "gen_mux16" for hierarchy "my_bus16:U_ADDR_BUS|gen_mux16:U_MUX"
 Info: Elaborating entity "my_bus8" for hierarchy "my_bus8:U_INT_BUS"
 Info: Elaborating entity "gen_mux8" for hierarchy "my_bus8:U_INT_BUS|gen_mux8:U_MUX"
-Info: Elaborating entity "gen_mux8" for hierarchy "gen_mux8:U_X_H_IN"
-Info: Elaborating entity "gen_mux16" for hierarchy "gen_mux16:U_X_INCR_MUX"
 Info: Elaborating entity "alu" for hierarchy "alu:U_ALU"
 Info: Elaborating entity "reg" for hierarchy "reg:U_C_REG"
 Info: Timing-Driven Synthesis is running
 Warning: Ignored assignments for entity "week1" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity week1 -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity week1 -section_id "Root Region" was ignored
-Warning: Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "x_h_en"
-Info: Implemented 463 device resources after synthesis - the final resource count might be different
-    Info: Implemented 42 input pins
+Info: Implemented 456 device resources after synthesis - the final resource count might be different
+    Info: Implemented 40 input pins
     Info: Implemented 44 output pins
-    Info: Implemented 377 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Implemented 372 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 258 megabytes
-    Info: Processing ended: Sun Apr 03 16:16:29 2016
+    Info: Processing ended: Sun Apr 03 23:45:21 2016
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
