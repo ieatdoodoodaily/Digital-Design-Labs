@@ -1,5 +1,5 @@
 Analysis & Synthesis report for week1
-Sun Apr 03 23:45:21 2016
+Sun Apr 03 23:48:09 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -76,7 +76,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 03 23:45:21 2016        ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 03 23:48:09 2016        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; week1                                        ;
 ; Top-level Entity Name              ; datapath                                     ;
@@ -241,9 +241,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |my_bus16:U_ADDR_BUS|   ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus16:U_ADDR_BUS                 ; work         ;
 ;       |gen_mux16:U_MUX|    ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus16:U_ADDR_BUS|gen_mux16:U_MUX ; work         ;
 ;    |my_bus8:U_EXT_BUS|     ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_EXT_BUS                   ;              ;
-;       |gen_mux8:U_MUX|     ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_EXT_BUS|gen_mux8:U_MUX    ;              ;
+;       |gen_mux8:U_MUX|     ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_EXT_BUS|gen_mux8:U_MUX    ; work         ;
 ;    |my_bus8:U_INT_BUS|     ; 51 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_INT_BUS                   ; work         ;
-;       |gen_mux8:U_MUX|     ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_INT_BUS|gen_mux8:U_MUX    ;              ;
+;       |gen_mux8:U_MUX|     ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|my_bus8:U_INT_BUS|gen_mux8:U_MUX    ; work         ;
 ;    |reg:U_ALU_REG|         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_ALU_REG                       ; work         ;
 ;    |reg:U_AR_H|            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_AR_H                          ; work         ;
 ;    |reg:U_AR_L|            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|reg:U_AR_L                          ; work         ;
@@ -661,7 +661,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun Apr 03 23:45:18 2016
+    Info: Processing started: Sun Apr 03 23:48:07 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off week1 -c week1
 Info: Found 2 design units, including 1 entities, in source file alu.vhd
     Info: Found design unit 1: alu-BHV
@@ -714,9 +714,9 @@ Info: Implemented 456 device resources after synthesis - the final resource coun
     Info: Implemented 44 output pins
     Info: Implemented 372 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 258 megabytes
-    Info: Processing ended: Sun Apr 03 23:45:21 2016
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 259 megabytes
+    Info: Processing ended: Sun Apr 03 23:48:09 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
