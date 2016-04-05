@@ -6,7 +6,7 @@ Data_radix = hex;
 Content
   Begin
 0000 : F9; % CLRC %
-0001 : 88;
+0001 : 88; % LDAA %
 0002 : 14;
 0003 : 00;
 0004 : F1;
