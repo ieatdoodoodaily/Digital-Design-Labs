@@ -32,6 +32,9 @@ entity datapath is
 		pc_incr_sel : in std_logic_vector(1 downto 0);
 		pc_h_sel    : in std_logic_vector(1 downto 0);
 		pc_l_sel    : in std_logic_vector(1 downto 0);
+		sp_incr_sel : in std_logic_vector(0 downto 0);
+		sp_h_sel    : in std_logic_vector(0 downto 0);
+		sp_l_sel    : in std_logic_vector(0 downto 0);
 		x_incr_sel  : in std_logic_vector(0 downto 0);
 		x_h_sel     : in std_logic_vector(0 downto 0);
 		x_l_sel     : in std_logic_vector(0 downto 0);
@@ -103,6 +106,23 @@ architecture STR of datapath is
 	
 	signal pc_out       : std_logic_vector(2*WIDTH-1 downto 0);
 
+	-- For SP Register Inputs
+	signal sp_h_in      : mux8_inputs(0 to 1);
+	signal sp_h_mux_out : std_logic_vector(WIDTH-1 downto 0);
+	
+	signal sp_l_in      : mux8_inputs(0 to 1);
+	signal sp_l_mux_out : std_logic_vector(WIDTH-1 downto 0);
+	
+	signal sp_incr_out  : std_logic_vector(2*WIDTH-1 downto 0);
+	
+	signal sp_sum       : std_logic_vector(2*WIDTH-1 downto 0);
+	
+	-- For SP Register Outputs
+	signal sp_h_out     : std_logic_vector(WIDTH-1 downto 0);
+	signal sp_l_out     : std_logic_vector(WIDTH-1 downto 0);
+	
+	signal sp_out       : std_logic_vector(2*WIDTH-1 downto 0);
+	
 	-- For X Register Inputs
 	signal x_h_in       : mux8_inputs(0 to 1);
 	signal x_h_mux_out  : std_logic_vector(WIDTH-1 downto 0);
@@ -373,16 +393,45 @@ begin
 	acc_out <= int_in(3);
 		
 	-- SP registers ##############################
+	sp_h_in(0) <= int_out;
+	sp_h_in(1) <= sp_sum(15 downto 8);
+	U_SP_H_IN : entity work.gen_mux8
+		generic map (
+			WIDTH    => WIDTH,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input  => sp_h_in,
+			sel    => sp_h_sel,
+			output => sp_h_mux_out
+		);
+	
 	U_SP_H : entity work.reg
 		generic map (
 			WIDTH => WIDTH
 		)
 		port map (
-			input  => int_out,
+			input  => sp_h_mux_out,
 			clk    => clk,
 			rst    => rst,
 			en     => sp_h_en,
 			output => int_in(4)
+		);
+	sp_h_out <= int_in(4);
+		
+	sp_h_in(0) <= int_out;
+	sp_h_in(1) <= sp_sum(7 downto 0);
+	U_SP_L_IN : entity work.gen_mux8
+		generic map (
+			WIDTH    => WIDTH,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input  => sp_l_in,
+			sel    => sp_l_sel,
+			output => sp_l_mux_out
 		);
 		
 	U_SP_L : entity work.reg
@@ -390,12 +439,29 @@ begin
 			WIDTH => WIDTH
 		)
 		port map (
-			input  => int_out,
+			input  => sp_l_mux_out,
 			clk    => clk,
 			rst    => rst,
 			en     => sp_l_en,
 			output => int_in(5)
 		);
+	sp_l_out <= int_in(5);
+	
+	sp_out   <= sp_h_out & sp_l_out;
+	
+	U_SP_INCR_MUX : entity work.gen_mux16
+		generic map (
+			WIDTH    => 16,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input(0) => std_logic_vector(to_signed(1, 16)),
+			input(1) => std_logic_vector(to_signed(-1, 16)),
+			sel      => sp_incr_sel,
+			output   => sp_incr_out
+		);
+	pc_sum <= std_logic_vector(resize(unsigned(sp_out), 2*WIDTH) + resize(unsigned(sp_incr_out), 2*WIDTH));	
 	
 	-- X registers ##############################
 	x_h_in(0) <= int_out;

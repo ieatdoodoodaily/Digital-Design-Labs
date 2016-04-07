@@ -27,6 +27,9 @@ architecture TB of datapath_tb is
 	signal pc_incr_sel : std_logic_vector(1 downto 0) := (others => '0');
 	signal pc_h_sel    : std_logic_vector(1 downto 0) := (others => '0');
 	signal pc_l_sel    : std_logic_vector(1 downto 0) := (others => '0');
+	signal sp_incr_sel : std_logic_vector(1 downto 0) := (others => '0');
+	signal sp_h_sel    : std_logic_vector(1 downto 0) := (others => '0');
+	signal sp_l_sel    : std_logic_vector(1 downto 0) := (others => '0');
 	signal x_incr_sel  : std_logic_vector(0 downto 0) := (others => '0');
 	signal x_h_sel     : std_logic_vector(0 downto 0) := (others => '0');
 	signal x_l_sel     : std_logic_vector(0 downto 0) := (others => '0');
@@ -83,6 +86,9 @@ begin
 			pc_incr_sel => pc_incr_sel,
 			pc_h_sel    => pc_h_sel,
 			pc_l_sel    => pc_l_sel,
+			sp_incr_sel => sp_incr_sel,
+			sp_h_sel    => sp_h_sel,
+			sp_l_sel    => sp_l_sel,
 			x_incr_sel  => x_incr_sel,
 			x_h_sel     => x_h_sel,
 			x_l_sel     => x_l_sel,

@@ -22,6 +22,9 @@ entity ctrl is
 		pc_incr_sel : out std_logic_vector(1 downto 0);
 		pc_h_sel    : out std_logic_vector(1 downto 0);
 		pc_l_sel    : out std_logic_vector(1 downto 0);
+		sp_incr_sel : out std_logic_vector(0 downto 0);
+		sp_h_sel    : out std_logic_vector(0 downto 0);
+		sp_l_sel    : out std_logic_vector(0 downto 0);
 		x_incr_sel  : out std_logic_vector(0 downto 0);
 		x_h_sel     : out std_logic_vector(0 downto 0);
 		x_l_sel     : out std_logic_vector(0 downto 0);
