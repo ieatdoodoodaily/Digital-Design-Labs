@@ -49,7 +49,7 @@ begin
 	wait until clk'event and clk = '1';
 	rst <= '0';
 	
-	for i in 0 to 100 loop
+	for i in 0 to 200 loop
 		wait until clk'event and clk = '1';
 	end loop;
 	

@@ -63,37 +63,40 @@ R7
 R8
 !s100 A>hPBib<@J0^HgP^<ibez2
 Ectrl
-Z15 w1460090082
+Z15 w1460264582
+R1
 R2
 R3
 Z16 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/ctrl.vhd
 Z17 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/ctrl.vhd
 l0
-L9
-Vaj_`k7YgXJ?kMN8<nXz;`2
+L10
+VanlUG?hz;d;>7gI<H6P:T1
 R6
 32
 R7
 R8
-!s100 KJoaIo8c4h<55bgcKo[Ch3
+!s100 9M4]Q0oEWGjXk7MzK@mmj1
 Abhv
+R1
 R2
-Z18 DEx4 work 4 ctrl 0 22 aj_`k7YgXJ?kMN8<nXz;`2
-l77
-L61
-Vm=oC007WBJ;Fh0GoOIE7F1
+Z18 DEx4 work 4 ctrl 0 22 anlUG?hz;d;>7gI<H6P:T1
+l98
+L62
+VNCT_E]oZPba8`ATOi3e1Q2
 R6
 32
-Z19 Mx1 4 ieee 14 std_logic_1164
+R10
+R11
 R7
 R8
-!s100 5hlTN]RZG]]g3Qo6W=EbP1
+!s100 JW@VfcU3lC_@MPlEN:3mI0
 Ectrl_w2
 R12
 R2
 R3
-Z20 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/ctrl_w2.vhd
-Z21 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/ctrl_w2.vhd
+Z19 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/ctrl_w2.vhd
+Z20 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/ctrl_w2.vhd
 l0
 L9
 V[C]PZeWG^MATZ?OYW@X_[1
@@ -110,12 +113,12 @@ L58
 VY2SP^Q<Eh;JV:1ZC^d0=X3
 R6
 32
-R19
+Z21 Mx1 4 ieee 14 std_logic_1164
 R7
 R8
 !s100 C>njR3boIV6Zf6c4Ekjco3
 Edatapath
-Z22 w1460090018
+Z22 w1460266695
 Z23 DPx4 work 9 mux16_pkg 0 22 gXhRcJc]@<>J75^dLRj_93
 Z24 DPx4 work 8 mux8_pkg 0 22 QAM9Z=?oY3T]6^m;RJ`j<0
 Z25 DPx4 ieee 9 math_real 0 22 zjAF7SKfg_RPI0GT^n1N`1
@@ -146,9 +149,9 @@ R25
 R1
 R2
 Z34 DEx4 work 8 datapath 0 22 6K=fo8J]NbQZ>8o89QHb13
-l164
+l165
 L75
-V^=B04dXk2`[]f0<a34_SL0
+VRfJnA;elA]iVi]4?5E1mH3
 R6
 32
 Z35 Mx5 4 ieee 14 std_logic_1164
@@ -158,7 +161,7 @@ Z38 Mx2 4 work 8 mux8_pkg
 Z39 Mx1 4 work 9 mux16_pkg
 R7
 R8
-!s100 KCJZNZN1bjln47iXTJ7;C3
+!s100 cf1=F4I]J:;AM]hX<PeE_2
 Edatapath_tb
 Z40 w1460090417
 R1
@@ -217,7 +220,7 @@ L15
 VzR<604V2mgY_e3SW7C^Ti0
 R6
 32
-R19
+R21
 R7
 R8
 !s100 BC8>dLzRgzHSMYY5_;8i@0
@@ -292,7 +295,7 @@ R7
 R8
 !s100 MhHYdfeo57R8SzECFg^KD3
 Ememory
-Z54 w1460090178
+Z54 w1460264013
 R2
 R3
 Z55 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/memory.vhd
@@ -310,13 +313,13 @@ R2
 R28
 l87
 L54
-V8[XTN28O?Qlh1;kbXUC3f0
+Vg0g=Ichd>_zRm_7YYGhCA1
 R6
 32
-R19
+R21
 R7
 R8
-!s100 5GGe52a@<8MmeGWe44WUn3
+!s100 ==_1^g=od;=cQG9iEHNbf2
 Pmux16_pkg
 R2
 R43
@@ -328,7 +331,7 @@ L9
 VgXhRcJc]@<>J75^dLRj_93
 R6
 32
-R19
+R21
 R7
 R8
 !s100 MEkFj5[<3ELDN;eRS3?F42
@@ -343,7 +346,7 @@ L9
 VQAM9Z=?oY3T]6^m;RJ`j<0
 R6
 32
-R19
+R21
 R7
 R8
 !s100 1P@Tzi6`PI4D9H`QkPken0
@@ -439,7 +442,7 @@ L22
 VUnV:mRe3=EMD>XgObj97;3
 R6
 32
-R19
+R21
 R7
 R8
 !s100 5DE6=`D3acU_=l6YP1i[33
@@ -502,12 +505,12 @@ L12
 VJ=AIz=EUWI3c5[]>AYGJT0
 R6
 32
-R19
+R21
 R7
 R8
 !s100 :D@MB:?[jGiC>MHIm[EFO3
 Esmall8_tb_tc1
-Z68 w1460092205
+Z68 w1460267218
 R2
 R3
 Z69 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/small_tb_tc1.vhd
@@ -526,19 +529,19 @@ R2
 Z71 DEx4 work 13 small8_tb_tc1 0 22 [XoI3d;c[?5a2Vkn_JQ970
 l27
 L12
-Z72 V7KEOG]jbAX4Vka`H3V3NB2
-Z73 !s100 ojo=>R0`U<do5Z<K_3lbT0
+VNPQ6l^k630IQ5hEghSLeU0
+!s100 K2ZhA`g838NEgEH7K9aOi1
 R6
 32
-R19
+R21
 R7
 R8
 Etop_level
 R43
 R2
 R3
-Z74 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/top_level.vhd
-Z75 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/top_level.vhd
+Z72 8C:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/top_level.vhd
+Z73 FC:/Users/Nick/Documents/EEL 4712/Digital-Design-Labs/Lab-7/week3/top_level.vhd
 l0
 L9
 VOcEhIO50>3iLm1?aGU3g`2
@@ -558,6 +561,6 @@ VzVoUd?9eN<;PF1I7=6[_F3
 !s100 AN:bhN^>=CG`;NB^RUS7m3
 R6
 32
-R19
+R21
 R7
 R8

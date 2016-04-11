@@ -5,6 +5,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity ctrl is
 	port (
@@ -60,18 +61,38 @@ end ctrl;
 
 architecture BHV of ctrl is
 
-	type STATE_TYPE is (RESET, OPFETCH0, OPFETCH1, OPFETCH2, DECODE_IR,
-						ADCR0, ADCR1, SBCR0, SBCR1, CMPR0, CMPR1,
-						ANDR0, ANDR1, ORR0, ORR1, XORR0, XORR1,
-						SLRL0, SLRL1, SRRL0, SRRL1, ROLC0, ROLC1, RORC0, RORC1,
-						DECA0, DECA1, INCA0, INCA1, SETC0, CLRC0,
+	type STATE_TYPE is (RESET, 
+						OPFETCH0, OPFETCH1, OPFETCH2, 
+						DECODE_IR,
+						ADCR0, ADCR1, 
+						SBCR0, SBCR1, 
+						CMPR0, CMPR1,
+						ANDR0, ANDR1, 
+						ORR0, ORR1, 
+						XORR0, XORR1,
+						SLRL0, SLRL1, 
+						SRRL0, SRRL1, 
+						ROLC0, ROLC1, 
+						RORC0, RORC1,
+						DECA0, DECA1, 
+						INCA0, INCA1, 
+						SETC0, CLRC0,
 						LDAI0, LDAI1, LDAI2, LDAI3, LDAI4,
 						LDAA0, LDAA1, LDAA2, LDAA3, LDAA4, LDAA5, LDAA6, LDAA7, LDAA8, LDAA9, LDAA10, LDAA11,
-						LDAD0, LDAD1, STAR0,
+						LDAD0, LDAD1, 
+						STAR0,
 						STAA0, STAA1, STAA2, STAA3, STAA4, STAA5, STAA6, STAA7, STAA8, STAA9,
 						BCCA, BCSA, BEQA, BMIA, BNEA, BPLA, BVCA, BVSA,
 						TAKEN0, TAKEN1, TAKEN2, TAKEN3, TAKEN4, TAKEN5, TAKEN6, TAKEN7,
-						NOT_TAKEN);
+						NOT_TAKEN,
+						LDSI0, LDSI1, LDSI2, LDSI3, LDSI4, LDSI5, LDSI6,
+						CALL0, CALL1, CALL2,
+						RET0, RET1, RET2, RET3, RET4, RET5,
+						LDXI0, LDXI1, LDXI2, LDXI3, LDXI4, LDXI5, LDXI6,
+						LDAX0, LDAX1, LDAX2,
+						STAX0, STAX1,
+						INCX, DECX,
+						LDBI0, LDBI1, LDBI2, LDBI3);
 	signal state, next_state : STATE_TYPE;
 	
 begin
@@ -170,6 +191,10 @@ begin
 						next_state <= SLRL0;
 					when "01100001" =>
 						next_state <= SRRL0;
+					when "01010010" =>
+						next_state <= ROLC0;
+					when "01100010" =>
+						next_state <= RORC0;
 					when "11111011" =>
 						next_state <= DECA0;
 					when "11111010" =>
@@ -194,6 +219,24 @@ begin
 						next_state <= BVCA;
 					when "10110111" =>
 						next_state <= BVSA;
+					when "10001001" =>
+						next_state <= LDSI0;
+					when "11001000" =>
+						next_state <= CALL0;
+					when "11000000" =>
+						next_state <= RET0;
+					when "10001010" =>
+						next_state <= LDXI0;
+					when "10111100" =>
+						next_state <= LDAX0;
+					when "11101100" =>
+						next_state <= STAX0;
+					when "11111100" =>
+						next_state <= INCX;
+					when "11111101" =>
+						next_state <= DECX;
+					when "10001111" =>
+						next_state <= LDBI0;
 					when others => null;
 				end case;
 			when ADCR0 =>
@@ -742,6 +785,252 @@ begin
 				next_state <= OPFETCH0;
 			when NOT_TAKEN =>
 				pc_incr_sel <= "01";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= OPFETCH0;
+			when LDSI0 =>
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+			
+				next_state <= LDSI1;
+			when LDSI1 =>
+				addr_w_en <= "01";
+				
+				next_state <= LDSI2;
+			when LDSI2 =>
+				ext_w_en <= "11";
+				
+				next_state <= LDSI3;
+			when LDSI3 =>
+				int_w_en <= "1001";
+				sp_l_sel <= std_logic_vector(to_unsigned(0,1));
+				sp_l_en  <= '1';
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= LDSI4;
+			when LDSI4 =>
+				addr_w_en <= "01";
+				
+				next_state <= LDSI5;
+			when LDSI5 =>
+				ext_w_en <= "11";
+				
+				next_state <= LDSI6;
+			when LDSI6 =>
+				int_w_en <= "1001";
+				sp_h_sel <= std_logic_vector(to_unsigned(0,1));
+				sp_h_en  <= '1';
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= OPFETCH0;
+			when CALL0 =>
+				sp_incr_sel <= std_logic_vector(to_unsigned(1,1));
+				sp_h_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_l_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_h_en     <= '1';
+				sp_l_en     <= '1';
+				int_w_en    <= "0001";
+				
+				next_state  <= CALL1;
+			when CALL1 =>
+				ext_w_en    <= "00";
+				addr_w_en   <= "11";
+				mem_wr_en   <= '1';
+				sp_incr_sel <= std_logic_vector(to_unsigned(1,1));
+				sp_h_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_l_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_h_en     <= '1';
+				sp_l_en     <= '1';
+				int_w_en    <= "0000";
+				
+				next_state <= CALL2;
+			when CALL2 =>
+				ext_w_en    <= "00";
+				addr_w_en   <= "11";
+				mem_wr_en   <= '1';
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= OPFETCH0;
+			when RET0 =>
+				addr_w_en   <= "11";
+				sp_incr_sel <= std_logic_vector(to_unsigned(0,1));
+				sp_h_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_l_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_h_en     <= '1';
+				sp_l_en     <= '1';
+				
+				next_state  <= RET1;
+			when RET1 =>
+				ext_w_en <= "11";
+				
+				next_state <= RET2;
+			when RET2 =>
+				int_w_en <= "1001";
+				pc_h_sel <= "00";
+				pc_h_en  <= '1';
+				
+				next_state <= RET3;
+			when RET3 =>
+				addr_w_en <= "11";
+				sp_incr_sel <= std_logic_vector(to_unsigned(0,1));
+				sp_h_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_l_sel    <= std_logic_vector(to_unsigned(1,1));
+				sp_h_en     <= '1';
+				sp_l_en     <= '1';
+				
+				next_state <= RET4;
+			when RET4 =>
+				ext_w_en <= "11";
+				
+				next_state <= RET5;
+			when RET5 =>
+				int_w_en <= "1001";
+				pc_l_sel <= "00";
+				pc_l_en  <= '1';
+				
+				next_state <= OPFETCH0;
+			when LDXI0 =>
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= LDXI1;
+			when LDXI1 =>
+				addr_w_en <= "01";
+				
+				next_state <= LDXI2;
+			when LDXI2 =>
+				ext_w_en <= "11";
+				
+				next_state <= LDXI3;
+			when LDXI3 =>
+				int_w_en <= "1001";
+				x_l_sel  <= std_logic_vector(to_unsigned(0,1));
+				x_l_en   <= '1';
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= LDXI4;
+			when LDXI4 =>
+				addr_w_en <= "01";
+				
+				next_state <= LDXI5;
+			when LDXI5 =>
+				ext_w_en <= "11";
+				
+				next_state <= LDXI6;
+			when LDXI6 =>
+				int_w_en <= "1001";
+				x_h_sel  <= std_logic_vector(to_unsigned(0,1));
+				x_h_en   <= '1';
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= OPFETCH0;
+			when LDAX0 =>
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= LDAX1;
+			when LDAX1 =>
+				ext_w_en <= "11";
+				
+				next_state <= LDAX2;
+			when LDAX2 =>
+				int_w_en <= "1001";
+				a_en <= '1';
+				
+				next_state <= OPFETCH0;
+			when STAX0 =>
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				int_w_en    <= "0011";
+				
+				next_state  <= STAX1;
+			when STAX1 =>
+				addr_w_en <= "10";
+				ext_w_en  <= "00";
+				mem_wr_en <= '1';
+				
+				next_state <= OPFETCH0;
+			when INCX =>
+				x_incr_sel  <= std_logic_vector(to_unsigned(0,1));
+				x_h_sel     <= std_logic_vector(to_unsigned(1,1));
+				x_l_sel     <= std_logic_vector(to_unsigned(1,1));
+				x_h_en      <= '1';
+				x_l_en      <= '1';
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= OPFETCH0;
+			when DECX =>
+				x_incr_sel  <= std_logic_vector(to_unsigned(1,1));
+				x_h_sel     <= std_logic_vector(to_unsigned(1,1));
+				x_l_sel     <= std_logic_vector(to_unsigned(1,1));
+				x_h_en      <= '1';
+				x_l_en      <= '1';
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= OPFETCH0;
+			when LDBI0 =>
+				pc_incr_sel <= "00";
+				pc_h_sel    <= "10";
+				pc_l_sel    <= "10";
+				pc_h_en     <= '1';
+				pc_l_en     <= '1';
+				
+				next_state  <= LDBI1;
+			when LDBI1 =>
+				addr_w_en <= "01";
+				
+				next_state <= LDBI2;
+			when LDBI2 =>
+				ext_w_en <= "11";
+				
+				next_state <= LDBI3;
+			when LDBI3 =>
+				int_w_en    <= "1001";
+				b_en        <= '1';
+				pc_incr_sel <= "00";
 				pc_h_sel    <= "10";
 				pc_l_sel    <= "10";
 				pc_h_en     <= '1';
