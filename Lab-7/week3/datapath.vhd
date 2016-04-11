@@ -68,7 +68,8 @@ entity datapath is
 		z           : out std_logic;
 		ir_out      : out std_logic_vector(WIDTH-1 downto 0);
 		outport0    : out std_logic_vector(WIDTH-1 downto 0);
-		outport1    : out std_logic_vector(WIDTH-1 downto 0)
+		outport1    : out std_logic_vector(WIDTH-1 downto 0);
+		addr     	: out std_logic_vector(2*WIDTH-1 downto 0)
 	);
 end datapath;
 
@@ -161,7 +162,6 @@ architecture STR of datapath is
 	
 	-- Address Bus Signals
 	signal addr_bus_in  : mux16_inputs(0 to 3);
-	signal addr         : std_logic_vector(2*WIDTH-1 downto 0);
 
 begin
 	

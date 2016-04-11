@@ -60,11 +60,14 @@ begin
 		tempC(0) := cin;
 		tempS    := (others => '0');
 		
+		cout <= '0';
+		
 		case sel is
 			when C_ADCR =>
 				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
 				res   := temp1(WIDTH-1 downto 0);
 				tempC(0) := temp1(WIDTH);
+				cout  <= tempC(0);
 				tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) + unsigned('0' & input2(WIDTH-2 downto 0)));
 			when C_SBCR =>
 				temp1 := resize(unsigned(input1), WIDTH+1) + resize(unsigned(NOT input2), WIDTH+1) + resize(unsigned(tempC), WIDTH+1);
@@ -75,6 +78,7 @@ begin
 					tempC(0) := '0';
 				end if;
 				--tempC(0) := temp1(WIDTH);
+				cout  <= tempC(0);
 				tempS := (unsigned('0' & input1(WIDTH-2 downto 0)) - unsigned('0' & (input2(WIDTH-2 downto 0))));
 			when C_ANDR =>
 				res   := unsigned(input1 AND input2);
@@ -88,18 +92,22 @@ begin
 			when C_SLRL =>
 				res   := unsigned(input1(WIDTH-2 downto 0) & '0');
 				tempC(0) := input1(WIDTH-1);
+				cout  <= tempC(0);
 				temp1 := '0' & res;
 			when C_SRRL =>
 				res   := unsigned('0' & input1(WIDTH-1 downto 1));
 				tempC(0) := input1(0);
+				cout  <= tempC(0);
 				temp1 := '0' & res;
 			when C_ROLC =>
 				res   := unsigned(input1(WIDTH-2 downto 0) & tempC(0));
 				tempC(0) := input1(WIDTH-1);
+				cout  <= tempC(0);
 				temp1 := '0' & res;
 			when C_RORC =>
 				res   := unsigned(tempC(0) & input1(WIDTH-1 downto 1));
 				tempC(0) := input1(0);
+				cout  <= tempC(0);
 				temp1 := '0' & res;
 			when C_DECR =>
 				res   := unsigned(input1) - to_unsigned(1, WIDTH);
@@ -109,10 +117,12 @@ begin
 				temp1 := '0' & res;
 			when C_SETC =>
 				tempC := "1";
+				cout  <= tempC(0);
 				temp1 := to_unsigned(0, WIDTH+1);
 				res   := (others => '0');
 			when C_CLRC =>
 				tempC := "0";
+				cout  <= tempC(0);
 				temp1 := to_unsigned(0, WIDTH+1);
 				res   := (others => '0');
 			when C_LOAD =>
@@ -134,7 +144,7 @@ begin
 		
 		csign := tempS(WIDTH-1);
 		
-		cout     <= tempC(0);
+		--cout     <= tempC(0);
 		overflow <= tempC(0) XOR csign;
 		sign     <= temp1(WIDTH-1);
 		if temp1(WIDTH-1 downto 0) = unsigned(C_0) then

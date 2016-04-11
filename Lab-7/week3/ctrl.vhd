@@ -55,7 +55,8 @@ entity ctrl is
 		v           : in std_logic;
 		s           : in std_logic;
 		z           : in std_logic;
-		ir_out      : in std_logic_vector(7 downto 0)
+		ir_out      : in std_logic_vector(7 downto 0);
+		addr 		: in std_logic_vector(15 downto 0);
 	);
 end ctrl;
 
@@ -629,6 +630,11 @@ begin
 				ext_w_en    <= "00";
 				addr_w_en   <= "00";
 				mem_wr_en   <= '1';
+				if (addr = "1111111111111110") then
+					outport0_en <= '1';
+				elsif (addr = "1111111111111111") then
+					outport1_en <= '1';
+				endif;
 				pc_incr_sel <= "00";
 				pc_h_sel    <= "10";
 				pc_l_sel    <= "10";

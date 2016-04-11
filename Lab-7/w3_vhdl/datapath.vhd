@@ -80,7 +80,8 @@ architecture STR of datapath is
 	
 	-- Internal Signals
 	-- For flags
-	signal int_c        : std_logic_vector(0 downto 0);
+	signal int_cin      : std_logic_vector(0 downto 0);
+	signal int_cout     : std_logic_vector(0 downto 0);
 	signal int_v        : std_logic_vector(0 downto 0);
 	signal int_s        : std_logic_vector(0 downto 0);
 	signal int_z        : std_logic_vector(0 downto 0);
@@ -156,9 +157,10 @@ architecture STR of datapath is
 	-- External Bus Signals
 	signal ext_in       : mux8_inputs(0 to 3);
 	signal ext_out      : std_logic_vector(WIDTH-1 downto 0);
+	signal in_rst       : std_logic;
 	
 	-- Address Bus Signals
-	signal addr_bus_in  : mux16_inputs(0 to 2);
+	signal addr_bus_in  : mux16_inputs(0 to 3);
 	signal addr         : std_logic_vector(2*WIDTH-1 downto 0);
 
 begin
@@ -183,7 +185,7 @@ begin
 		port map (
 			input  => switches,
 			clk    => clk,
-			rst    => rst,
+			rst    => in_rst,
 			en     => inport0_en,
 			output => ext_in(1)
 		);
@@ -195,7 +197,7 @@ begin
 		port map (
 			input  => switches,
 			clk    => clk,
-			rst    => rst,
+			rst    => in_rst,
 			en     => inport1_en,
 			output => ext_in(2)
 		);
@@ -232,7 +234,7 @@ begin
 	U_ADDR_BUS : entity work.my_bus16
 		generic map (
 			WIDTH    => 16,
-			INPUTS   => 3,
+			INPUTS   => 4,
 			SEL_BITS => 2
 		)
 		port map (
@@ -420,8 +422,8 @@ begin
 		);
 	sp_h_out <= int_in(4);
 		
-	sp_h_in(0) <= int_out;
-	sp_h_in(1) <= sp_sum(7 downto 0);
+	sp_l_in(0) <= int_out;
+	sp_l_in(1) <= sp_sum(7 downto 0);
 	U_SP_L_IN : entity work.gen_mux8
 		generic map (
 			WIDTH    => WIDTH,
@@ -461,7 +463,7 @@ begin
 			sel      => sp_incr_sel,
 			output   => sp_incr_out
 		);
-	pc_sum <= std_logic_vector(resize(unsigned(sp_out), 2*WIDTH) + resize(unsigned(sp_incr_out), 2*WIDTH));	
+	sp_sum <= std_logic_vector(resize(unsigned(sp_out), 2*WIDTH) + resize(unsigned(sp_incr_out), 2*WIDTH));	
 	
 	-- X registers ##############################
 	x_h_in(0) <= int_out;
@@ -558,9 +560,9 @@ begin
 			input1   => acc_out,
 			input2   => int_out,
 			sel      => alu_sels,
-			cin      => int_c(0),
+			cin      => int_cin(0),
 			output   => alu_out,
-			cout     => int_c(0),
+			cout     => int_cout(0),
 			overflow => int_v(0),
 			sign     => int_s(0),
 			zero     => int_z(0)
@@ -585,12 +587,13 @@ begin
 			WIDTH => 1
 		)
 		port map (
-			input  => int_c,
+			input  => int_cout,
 			clk    => clk,
 			rst    => rst,
 			en     => c_en,
-			output(0) => c
+			output => int_cin
 		);
+	c <= int_cin(0);
 	
 	U_V_REG : entity work.reg
 		generic map (

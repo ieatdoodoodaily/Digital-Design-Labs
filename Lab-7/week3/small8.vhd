@@ -65,6 +65,7 @@ architecture STR of small8 is
 	signal s           : std_logic;
 	signal z           : std_logic;
 	signal ir_out      : std_logic_vector(7 downto 0);
+	signal addr 	   : std_logic_vector(15 downto 0);
 
 begin
 	--rst <= button(2);
@@ -125,7 +126,8 @@ begin
 			z           => z,
 			ir_out      => ir_out,
 			outport0    => outport0,
-			outport1    => outport1
+			outport1    => outport1,
+			addr 		=> addr
 		);
 		
 	U_CONTROLLER : entity work.ctrl
@@ -177,7 +179,8 @@ begin
 			v           => v,
 			s           => s,
 			z           => z,
-			ir_out      => ir_out
+			ir_out      => ir_out,
+			addr        => addr
 		);
 	
 end STR;
