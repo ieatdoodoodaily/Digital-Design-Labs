@@ -24,48 +24,8 @@ entity top_level is
 end top_level;
 
 architecture STR of top_level is
-
-	-- Write Enables
-	signal int_w_en    : std_logic_vector(3 downto 0);
-	signal ext_w_en    : std_logic_vector(1 downto 0);
-	signal addr_w_en   : std_logic_vector(1 downto 0);
-	signal mem_wr_en   : std_logic;
 	
-	-- Selects
-	signal alu_sels    : std_logic_vector(3 downto 0);
-	signal pc_incr_sel : std_logic_vector(1 downto 0);
-	signal pc_h_sel    : std_logic_vector(1 downto 0);
-	signal pc_l_sel    : std_logic_vector(1 downto 0);
-	signal x_incr_sel  : std_logic_vector(0 downto 0);
-	signal x_h_sel     : std_logic_vector(0 downto 0);
-	signal x_l_sel     : std_logic_vector(0 downto 0);
-	
-	-- Register Enables
-	signal ar_h_en     : std_logic;
-	signal ar_l_en     : std_logic;
-	signal ir_en       : std_logic;
-	signal pc_h_en     : std_logic;
-	signal pc_l_en     : std_logic;
-	signal d_en        : std_logic;
-	signal a_en        : std_logic;
-	signal sp_h_en     : std_logic;
-	signal sp_l_en     : std_logic;
-	signal x_h_en      : std_logic;
-	signal x_l_en      : std_logic;
-	signal b_en        : std_logic;
-	signal c_en        : std_logic;
-	signal v_en        : std_logic;
-	signal s_en        : std_logic;
-	signal z_en        : std_logic;
-	signal outport0_en : std_logic;
-	signal outport1_en : std_logic;
-	
-	-- Outputs
-	signal c           : std_logic;
-	signal v           : std_logic;
-	signal s           : std_logic;
-	signal z           : std_logic;
-	signal ir_out      : std_logic_vector(7 downto 0);
+	signal in_rst      : std_logic;
 	signal outport0    : std_logic_vector(7 downto 0);
 	signal outport1    : std_logic_vector(7 downto 0);
 
@@ -73,11 +33,13 @@ architecture STR of top_level is
 
 begin
 	--rst <= button(2);
+	in_rst <= '0';
 	U_SMALL8 : entity work.small8
 		port map (
 			clk        => clk,
 			rst        => button(2),
 			inport_in  => switch(9 downto 2),
+			in_rst     => in_rst,
 			inport0_en => button(1),
 			inport1_en => button(0),
 			

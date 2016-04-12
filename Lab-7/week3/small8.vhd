@@ -11,6 +11,7 @@ entity small8 is
 		clk         : in std_logic;
         rst         : in std_logic;
         inport_in   : in std_logic_vector(7 downto 0);
+        in_rst      : in std_logic;
         inport0_en  : in std_logic;
         inport1_en  : in std_logic;
         
@@ -32,6 +33,8 @@ architecture STR of small8 is
 	signal pc_incr_sel : std_logic_vector(1 downto 0);
 	signal pc_h_sel    : std_logic_vector(1 downto 0);
 	signal pc_l_sel    : std_logic_vector(1 downto 0);
+	signal a_sel       : std_logic_vector(0 downto 0);
+	signal d_sel       : std_logic_vector(0 downto 0);
 	signal sp_incr_sel : std_logic_vector(0 downto 0);
 	signal sp_h_sel    : std_logic_vector(0 downto 0);
 	signal sp_l_sel    : std_logic_vector(0 downto 0);
@@ -79,6 +82,8 @@ begin
 			rst         => rst,
 			switches    => inport_in,
 			
+			in_rst      => in_rst,
+			
 			-- Write Enables
 			int_w_en    => int_w_en,
 			ext_w_en    => ext_w_en,
@@ -90,6 +95,8 @@ begin
 			pc_incr_sel => pc_incr_sel,
 			pc_h_sel    => pc_h_sel,
 			pc_l_sel    => pc_l_sel,
+			a_sel       => a_sel,
+			d_sel       => d_sel,
 			sp_incr_sel => sp_incr_sel,
 			sp_h_sel    => sp_h_sel,
 			sp_l_sel    => sp_l_sel,
@@ -147,6 +154,8 @@ begin
 			pc_incr_sel => pc_incr_sel,
 			pc_h_sel    => pc_h_sel,
 			pc_l_sel    => pc_l_sel,
+			a_sel       => a_sel,
+			d_sel       => d_sel,
 			sp_incr_sel => sp_incr_sel,
 			sp_h_sel    => sp_h_sel,
 			sp_l_sel    => sp_l_sel,

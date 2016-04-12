@@ -21,6 +21,8 @@ entity datapath is
 		rst         : in std_logic;
 		switches    : in std_logic_vector(7 downto 0);
 		
+		in_rst      : in std_logic;
+		
 		-- Write Enables
 		int_w_en    : in std_logic_vector(3 downto 0);
 		ext_w_en    : in std_logic_vector(1 downto 0);
@@ -32,6 +34,8 @@ entity datapath is
 		pc_incr_sel : in std_logic_vector(1 downto 0);
 		pc_h_sel    : in std_logic_vector(1 downto 0);
 		pc_l_sel    : in std_logic_vector(1 downto 0);
+		a_sel       : in std_logic_vector(0 downto 0);
+		d_sel       : in std_logic_vector(0 downto 0);
 		sp_incr_sel : in std_logic_vector(0 downto 0);
 		sp_h_sel    : in std_logic_vector(0 downto 0);
 		sp_l_sel    : in std_logic_vector(0 downto 0);
@@ -108,6 +112,23 @@ architecture STR of datapath is
 	
 	signal pc_out       : std_logic_vector(2*WIDTH-1 downto 0);
 
+	-- For A Register Inputs
+	signal a_in         : mux8_inputs(0 to 1);
+	signal a_mux_out    : std_logic_vector(WIDTH-1 downto 0);
+	
+	-- For Accumulator Output
+	signal acc_out      : std_logic_vector(WIDTH-1 downto 0);
+	
+	-- For D Register Inputs
+	signal d_in         : mux8_inputs(0 to 1);
+	signal d_mux_out    : std_logic_vector(WIDTH-1 downto 0);
+	
+	-- For D Register Output
+	signal d_out        : std_logic_vector(WIDTH-1 downto 0);
+
+	-- For AD = A*D Multiplication
+	signal mult_ad      : std_logic_vector(2*WIDTH-1 downto 0);
+	
 	-- For SP Register Inputs
 	signal sp_h_in      : mux8_inputs(0 to 1);
 	signal sp_h_mux_out : std_logic_vector(WIDTH-1 downto 0);
@@ -145,9 +166,6 @@ architecture STR of datapath is
 	
 	signal b_out        : std_logic_vector(WIDTH-1 downto 0);
 
-	-- For Accumulator Output
-	signal acc_out      : std_logic_vector(WIDTH-1 downto 0);
-
 	-- For ALU Output
 	signal alu_out      : std_logic_vector(WIDTH-1 downto 0);
 	
@@ -158,10 +176,10 @@ architecture STR of datapath is
 	-- External Bus Signals
 	signal ext_in       : mux8_inputs(0 to 3);
 	signal ext_out      : std_logic_vector(WIDTH-1 downto 0);
-	signal in_rst       : std_logic;
 	
 	-- Address Bus Signals
 	signal addr_bus_in  : mux16_inputs(0 to 3);
+	signal int_addr     : std_logic_vector(2*WIDTH-1 downto 0);
 
 begin
 	
@@ -230,7 +248,7 @@ begin
 	addr_bus_in(0) <= ar_h_out & ar_l_out;
 	addr_bus_in(1) <= pc_h_out & pc_l_out;
 	addr_bus_in(2) <= xb_out;
-	
+	addr_bus_in(3) <= sp_h_out & sp_l_out;
 	U_ADDR_BUS : entity work.my_bus16
 		generic map (
 			WIDTH    => 16,
@@ -240,9 +258,10 @@ begin
 		port map (
 			input  => addr_bus_in,
 			w_en   => addr_w_en,
-			output => addr
+			output => int_addr
 		);
-
+	addr <= int_addr;
+	
 	-- Internal Bus ##############################
 	U_INT_BUS : entity work.my_bus8
 		generic map (
@@ -369,16 +388,45 @@ begin
 	pc_sum <= std_logic_vector(resize(unsigned(pc_out), 2*WIDTH) + resize(unsigned(pc_incr_out), 2*WIDTH));	
 		
 	-- D & A registers ##############################	
+	d_in(0) <= int_out;
+	d_in(1) <= mult_ad(7 downto 0);
+	U_D_MUX : entity work.gen_mux8
+		generic map (
+			WIDTH    => 8,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input    => d_in,
+			sel      => d_sel,
+			output   => d_mux_out
+		);
+		
 	U_D : entity work.reg
 		generic map (
 			WIDTH => WIDTH
 		)
 		port map (
-			input  => int_out,
+			input  => d_mux_out,
 			clk    => clk,
 			rst    => rst,
 			en     => d_en,
 			output => int_in(2)
+		);
+	d_out <= int_in(2);
+	
+	a_in(0) <= int_out;
+	a_in(1) <= mult_ad(15 downto 8);
+	U_A_MUX : entity work.gen_mux8
+		generic map (
+			WIDTH    => 8,
+			INPUTS   => 2,
+			SEL_BITS => 1
+		)
+		port map (
+			input    => a_in,
+			sel      => a_sel,
+			output   => a_mux_out
 		);
 		
 	U_A : entity work.reg
@@ -386,13 +434,14 @@ begin
 			WIDTH => WIDTH
 		)
 		port map (
-			input  => int_out,
+			input  => a_mux_out,
 			clk    => clk,
 			rst    => rst,
 			en     => a_en,
 			output => int_in(3)
 		);
 	acc_out <= int_in(3);
+	mult_ad <= std_logic_vector(unsigned(d_out) * unsigned(acc_out));
 		
 	-- SP registers ##############################
 	sp_h_in(0) <= int_out;
@@ -657,14 +706,14 @@ begin
 		);
 	
 	-- Memory ########################################
-	U_MEM : entity work.memory
+	U_MEM : entity work.mem2
 		port map (
-			address => addr,
+			address => int_addr(11 downto 0),
 			clock   => clk,
 			data    => ext_out,
 			wren    => mem_wr_en,
 			q       => ext_in(3) 
 			
 		);
-		
+	
 end STR;

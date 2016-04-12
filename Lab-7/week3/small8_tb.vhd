@@ -16,6 +16,7 @@ architecture TB of small8_tb is
 	signal clk        : std_logic 						   := '0';
 	signal rst        : std_logic                          := '0';
 	signal inport_in  : std_logic_vector(WIDTH-1 downto 0) := (others => '0');
+	signal in_rst     : std_logic						   := '0';
 	signal inport0_en : std_logic                          := '0';
 	signal inport1_en : std_logic                          := '0';
 	
@@ -31,6 +32,7 @@ begin
 			clk        => clk,
 			rst        => rst,
 			inport_in  => inport_in,
+			in_rst     => in_rst,
 			inport0_en => inport0_en,
 			inport1_en => inport1_en,
 			

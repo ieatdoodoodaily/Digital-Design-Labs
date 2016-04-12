@@ -18,6 +18,8 @@ architecture TB of datapath_tb is
 	signal rst         : std_logic                    := '0';
 	signal switches    : std_logic_vector(7 downto 0) := (others => '0');
 	
+	signal in_rst      : std_logic                    := '0';
+	
 	signal int_w_en    : std_logic_vector(3 downto 0) := (others => '0');
 	signal ext_w_en    : std_logic_vector(1 downto 0) := (others => '0');
 	signal addr_w_en   : std_logic_vector(1 downto 0) := (others => '0');
@@ -27,6 +29,8 @@ architecture TB of datapath_tb is
 	signal pc_incr_sel : std_logic_vector(1 downto 0) := (others => '0');
 	signal pc_h_sel    : std_logic_vector(1 downto 0) := (others => '0');
 	signal pc_l_sel    : std_logic_vector(1 downto 0) := (others => '0');
+	signal a_sel       : std_logic_vector(0 downto 0) := (others => '0');
+	signal d_sel       : std_logic_vector(0 downto 0) := (others => '0');
 	signal sp_incr_sel : std_logic_vector(0 downto 0) := (others => '0');
 	signal sp_h_sel    : std_logic_vector(0 downto 0) := (others => '0');
 	signal sp_l_sel    : std_logic_vector(0 downto 0) := (others => '0');
@@ -77,6 +81,8 @@ begin
 			rst         => rst,
 			switches    => switches,
 			
+			in_rst      => in_rst,
+			
 			int_w_en    => int_w_en,
 			ext_w_en    => ext_w_en,
 			addr_w_en   => addr_w_en,
@@ -86,6 +92,8 @@ begin
 			pc_incr_sel => pc_incr_sel,
 			pc_h_sel    => pc_h_sel,
 			pc_l_sel    => pc_l_sel,
+			a_sel       => a_sel,
+			d_sel       => d_sel,
 			sp_incr_sel => sp_incr_sel,
 			sp_h_sel    => sp_h_sel,
 			sp_l_sel    => sp_l_sel,

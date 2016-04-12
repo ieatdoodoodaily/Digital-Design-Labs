@@ -6,10 +6,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity small8_tb_tc1 is
-end small8_tb_tc1;
+entity small8_tb_input is
+end small8_tb_input;
 
-architecture TB of small8_tb_tc1 is
+architecture TB of small8_tb_input is
 
 	constant WIDTH : positive := 8;
 	
@@ -47,6 +47,18 @@ begin
 	
 	wait until clk'event and clk = '1';
 	rst <= '1';
+	
+	wait until clk'event and clk = '1';
+	inport_in  <= "00000001";
+	inport0_en <= '1';
+	
+	wait until clk'event and clk = '1';
+	inport_in  <= "00000011";
+	inport0_en <= '0';
+	inport1_en <= '1';
+	
+	wait until clk'event and clk = '1';
+	inport1_en <= '0'; 
 	
 	wait until clk'event and clk = '1';
 	rst <= '0';
